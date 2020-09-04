@@ -1,0 +1,24 @@
+html{
+    font-size: 16px;
+}
+body {
+    --blue-color: #08415c;
+    --red-color: #cc2936;
+    --light-color: #eee5e9;
+    --peach-color: #f1bf98;
+    --gray-color: #6b818c;
+  }
+  /* section that contains footer content */
+.footer-section{
+font-size: 0.8rem;
+background-color: var(--light-color);
+color: var(--blue-color);
+}
+/* anchor tags in footer */
+footer a{
+    color: var(--blue-color);
+}
+.copyright-section{
+    background-color: var(--peach-color);
+    color: var(--red-color);
+}
