@@ -28,12 +28,7 @@ body {
   color: var(--light-color);
   left: 2%;
 }
-@media screen and (max-width: 520px) {
-  .usp {
-    top: 30%;
-    font-size: 1.6rem;
-  }
-}
+
 /* for all h1 headings in body main headings */
 h1 {
   font-family: "Roboto Slab", serif;
@@ -45,6 +40,18 @@ h2 {
   font-family: "Roboto Slab", serif;
   margin-left: 5%;
 }
+/* discount heading on slider */
+.carousel-item h3 span{
+  color: var(--red-color);
+  font-weight: bold;
+  font-size: 2.8rem;
+  text-shadow: none
+}
+.carousel-item h3{
+color: var(--light-color);
+text-shadow: 1px 2px var(--red-color);
+}
+
 /* giving bg-color to the each category bt targeting their div */
 .all-category>div:nth-child(1),.all-category>div:nth-child(3){
   background-color: rgba(107, 129, 140, 0.3);
@@ -61,5 +68,22 @@ h2 {
 .card-title{
   color: var(--blue-color);
   font-weight: bold;
+}
+/* responsive font size for tagline and usp */
+
+@media screen and (max-width: 800px) {
+  .usp {
+    top:23%;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 620px) {
+  .usp {
+    top: 25%;
+    font-size: 1.6rem;
+  }
+  .carousel-item h3{
+    font-size: 1rem;
+  }
 }
 

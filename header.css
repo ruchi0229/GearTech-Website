@@ -37,3 +37,7 @@ body {
 .category-navbar ul:first-child li span {
   font-size: 1.2rem;
 }
+.category-arrow{
+  font-size: 10px!important;
+ margin-left: 3%;
+}
