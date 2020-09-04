@@ -1,0 +1,39 @@
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  --blue-color: #08415c;
+  --red-color: #cc2936;
+  --light-color: #eee5e9;
+  --peach-color: #f1bf98;
+  padding-top: 6em;
+}
+/* main nav bar */
+.navbar {
+  background-color: var(--light-color);
+  border-top: var(--red-color) 0.3em solid;
+  font-weight: 600;
+}
+.nav-link {
+  color: var(--blue-color);
+  font-size: 0.7rem;
+}
+/* second navbar */
+.dropdown-item {
+  font-size: 0.8rem;
+}
+.category-navbar ul {
+  background-color: var(--peach-color);
+  border: 0.21em solid var(--red-color);
+  font-family: "Roboto Slab", serif;
+}
+.category-navbar ul a,
+.category-navbar ul li {
+  color: var(--blue-color);
+}
+.category-navbar ul:first-child li span {
+  font-size: 1.2rem;
+}
