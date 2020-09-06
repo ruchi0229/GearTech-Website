@@ -9,12 +9,8 @@
     <!--bootsrap  Styles sheet  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- style sheet for nav bar -->
-    <link rel="stylesheet" href="header.css">
-    <!-- style sheet for slider and other sections in homepage -->
-    <link rel="stylesheet" href="homepage-section.css">
-    <!-- style sheet for footer -->
-    <link rel="stylesheet" href="footer.css">
+    <!-- style sheet for complete website -->
+    <link rel="stylesheet" href="assets/css/exotic-parts.css">
     <!-- font family Montserrat and roboto slab -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Roboto+Slab:wght@200;300;400;500;600;700;800&display=swap"
@@ -24,12 +20,12 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <!-- first nav bar with anchor tags  contains logo, about, contact us , login and add to cart -->
         <nav class="navbar navbar-expand-lg fixed-top p-0 font-weight-bold mb-4">
 
             <!-- Navbar brand -->
-            <img class="navbar-brand pt-0 ml-3" src="images/website-images/logo/logo.png" alt="exotic parts logo"
+            <img class="navbar-brand pt-0 ml-3" src="assets/images/website-images/logo.png" alt="exotic parts logo"
                 width="85em">
 
             <!-- Collapse button -->
@@ -91,7 +87,7 @@
                 <ul class="navbar-nav mr-4">
                     <!-- login and signup -->
                     <li class="nav-item pl-4 pl-lg-0 pl-md-4 pl-sm-4">
-                        <a class="nav-link d-flex flex-lg-column align-items-center" href="#">
+                        <a class="nav-link d-flex flex-lg-column align-items-center" href="html/form.html">
                             <!-- login icon  -->
                             <span class="pr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36"
@@ -136,7 +132,7 @@
                 <li class="dropdown">
                     <!-- brand logo -->
                     <span>
-                        <img src="images/website-images/logo/logo-crop.png" alt="" width="50px">
+                        <img src="assets/images/website-images/logo-crop.png" alt="" width="50px">
                         <span class="font-weight-bolder">Categories</span></span>
                 </li>
                 <li class="dropdown">
@@ -144,9 +140,9 @@
                     <a class=" dropdown-toggle text-decoration-none " id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" href="#">Tyre and Wheels</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Wheel Accessories</a>
-                        <a class="dropdown-item" href="#">Nuts</a>
-                        <a class="dropdown-item" href="#">Tyres</a>
+                        <a class="dropdown-item" href="#">Wheel Accessories <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Nuts <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Tyres <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
                 <li class=" dropdown ">
@@ -154,9 +150,9 @@
                     <a class="dropdown-toggle text-decoration-none" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" href="#">Exterior</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Window Visors</a>
-                        <a class="dropdown-item" href="#">Door Handles, Locks & Accessories</a>
-                        <a class="dropdown-item" href="#">Truck Accessories</a>
+                        <a class="dropdown-item" href="#">Window Visors <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Door Handles, Locks & Accessories <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Truck Accessories <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
                 <li class=" dropdown ">
@@ -164,9 +160,9 @@
                     <a class="dropdown-toggle text-decoration-none" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" href="#"> Interior</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Mobile Electronics</a>
-                        <a class="dropdown-item" href="#">Horns and Components</a>
-                        <a class="dropdown-item" href="#">Switches, Relays and Wiring Components</a>
+                        <a class="dropdown-item" href="#">Mobile Electronics <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Horns and Components <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Switches, Relays and Wiring Components <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
                 <li class=" dropdown ">
@@ -174,9 +170,9 @@
                     <a class="dropdown-toggle text-decoration-none" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" href="#">Car Parts</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Back & Head Lights</a>
-                        <a class="dropdown-item" href="#">Side Mirrors</a>
-                        <a class="dropdown-item" href="#">Wiper Blades</a>
+                        <a class="dropdown-item" href="#">Back & Head Lights <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Side Mirrors <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Wiper Blades <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
             </ul>
@@ -193,21 +189,26 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide w-50" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-interval="2500">
-                        <img src="images/website-images/slider-images/hs-headlight-part.webp" class="d-block w-75"
+                        <img src="assets/images/website-images/slider-1.webp" class="d-block w-75 mx-auto"
                             alt="...">
+                            <h3 class="w-75 mx-auto"><span>10%</span> Discount after Delivery Time</h3>
                     </div>
                     <div class="carousel-item" data-interval="2500">
-                        <img src="images/website-images/slider-images/hs-catalytic-converter-part.webp"
-                            class="d-block w-75" alt="...">
+                        <img src="assets/images/website-images/slider-2.webp"
+                            class="d-block w-75 mx-auto" alt="...">
+                            <h3 class="w-75 mx-auto"><span>10%</span> Discount after Delivery Time</h3>
+
                     </div>
                     <div class="carousel-item" data-interval="2500">
-                        <img src="images/website-images/slider-images/hs-alternator-part.webp" class="d-block w-75"
+                        <img src="assets/images/website-images/slider-3.webp" class="d-block w-75 mx-auto"
                             alt="...">
+                            <h3 class="w-75 mx-auto"><span>10%</span> Discount after Delivery Time</h3>
+
                     </div>
                 </div>
             </div>
             <div>
-                <h1 class="usp ml-lg-5 ml-md-4 text-center position-absolute w-50">10% Discount after Delivery Time
+                <h1 class="usp ml-lg-5 ml-md-4 text-center position-absolute w-50 text-uppercase">Don't let Your Auto Parts Die, Buy Exotic Parts!
                 </h1>
             </div>
         </section>
