@@ -1,0 +1,256 @@
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  --blue-color: #08415c;
+  --red-color: #cc2936;
+  --light-color: #eee5e9;
+  --peach-color: #f1bf98;
+}
+.header{
+  padding-top: 6em;
+}
+/* main nav bar */
+.navbar {
+  background-color: var(--light-color);
+  border-top: var(--red-color) 0.3em solid;
+  font-weight: 600;
+}
+.nav-link {
+  color: var(--blue-color);
+  font-size: 0.7rem;
+}
+/* second navbar */
+.dropdown-item {
+  font-size: 0.8rem;
+}
+.category-navbar ul {
+  background-color: var(--peach-color);
+  border: 0.21em solid var(--red-color);
+  font-family: "Roboto Slab", serif;
+}
+.category-navbar ul a,
+.category-navbar ul li {
+  color: var(--blue-color);
+}
+.category-navbar ul:first-child li span {
+  font-size: 1.2rem;
+}
+.category-arrow{
+  font-size: 10px!important;
+ margin-left: 3%;
+}
+.slider {
+  background-image: url("../images/website-images/autoparts.webp");
+  background-size: 40em 14em;
+}
+/* this class is used for giving bg-color in the slider */
+.corousel-bg {
+  top: 0em;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(8, 65, 92, 0.93);
+}
+/* autoparts pictures */
+.carousel-item {
+  z-index: 1;
+}
+/* Usp text on left in corousel */
+.usp {
+  top: 45%;
+  z-index: 2;
+  color: var(--light-color);
+  left: 2%;
+}
+
+/* for all h1 headings in body main headings */
+h1 {
+  font-family: "Roboto Slab", serif;
+  color: var(--blue-color);
+}
+/* sub category heading */
+h2 {
+  color: var(--red-color);
+  font-family: "Roboto Slab", serif;
+  margin-left: 5%;
+}
+/* discount heading on slider */
+.carousel-item h3 span{
+  color: var(--red-color);
+  font-weight: bold;
+  font-size: 2.8rem;
+  text-shadow: none
+}
+.carousel-item h3{
+color: var(--light-color);
+text-shadow: 1px 2px var(--red-color);
+}
+
+/* giving bg-color to the each category bt targeting their div */
+.all-category>div:nth-child(1),.all-category>div:nth-child(3){
+  background-color: rgba(107, 129, 140, 0.3);
+}
+.all-category>div:nth-child(2),.all-category>div:nth-child(4){
+  background-color: rgba(238, 229, 233,0.1);
+}
+/* buttons in product card */
+.btn {
+  background-color: var(--blue-color);
+  color: var(--light-color);
+}
+/* product cards */
+.card-title{
+  color: var(--blue-color);
+  font-weight: bold;
+}
+/* responsive font size for tagline and usp */
+
+@media screen and (max-width: 800px) {
+  .usp {
+    top:23%;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 620px) {
+  .usp {
+    top: 25%;
+    font-size: 1.6rem;
+  }
+  .carousel-item h3{
+    font-size: 1rem;
+  }
+}
+ /* section that contains footer content */
+ .footer-section{
+  font-size: 0.8rem;
+  background-color: var(--light-color);
+  color: var(--blue-color);
+  }
+  /* anchor tags in footer */
+  footer a{
+      color: var(--blue-color);
+  }
+  .copyright-section{
+      background-color: var(--peach-color);
+      color: var(--red-color);
+  }
+
+  /* form page Styling */
+
+.wrapper{
+    width: 380px;
+    height: 480px;
+    margin: 6% auto;
+    position: relative;
+    padding: 5px;
+    background-color: #08415c;
+    border: 10px solid;
+    border-image-source: linear-gradient(45deg, #EEE5E9, #F1BF98 );
+    border-image-slice: 1;
+    overflow: hidden;
+}
+.button{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0px 0px 20px 0 #6B818C;
+    border-radius: 30px;
+}
+.toggle-butn{
+    padding: 10px 30px;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border:0;
+    position: relative;
+}
+#butn-div{
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: linear-gradient(to right, #EEE5E9, #F1BF98 );
+    width: 110px;
+    height: 110%;
+    transition: .5s;
+    border-radius: 30px;
+}
+.icon{
+    margin: 30px auto;
+    text-align: center;
+}
+.icon i{
+    width: 30px;
+    font-size: 20px;
+    background-image: linear-gradient(to right, #EEE5E9, #F1BF98 );
+    color:#08415c;
+    margin: 0 12px;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.form-container form{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field{
+    position: relative;
+    width: 70%;
+    padding: 5px 20px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 1px solid #F1BF98;
+    margin: 10px 0;
+}
+.input-email{
+   position: absolute;
+   top: 15px; 
+}
+.input-pswd{
+    position: absolute;
+    top: 60px; 
+}
+.submit-btn{
+    border: none;
+    padding: 10px 30px;
+    background-image: linear-gradient(to right, #EEE5E9, #F1BF98 );
+    width: 85%;
+    display: block;
+    transition: .5s;
+    border-radius: 30px;
+    margin: auto;
+    outline: none;
+    cursor: pointer;
+}
+.checkbox{
+    margin: 30px 10px 30px 0px;
+}
+.checkbox span{
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+.signup-user{
+    position: absolute;
+    top: 18px;
+}
+.signup-email{
+    position: absolute;
+    top: 62px;
+    
+}
+.signup-pswd{
+    position: absolute;
+    top: 110px;
+}
+/* #login{
+    margin-left: 50px;
+}
+#signup{
+    margin-left: 450px;
+} */
