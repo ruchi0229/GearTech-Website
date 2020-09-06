@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & SignUP</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="https://kit.fontawesome.com/0413a50a0f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--form box-->
+    <div class="wrapper">
+        <!--button container-->
+        <div class="button">
+            <!--for toggle button-->
+        <div id="butn-div"></div>
+            <!--button-->
+            <button type="button" class="toggle-butn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-butn" onclick="signup()">Sign Up</button>
+        </div>
+        <!--social media icons-->
+        <div class="icon">
+            <i class="fab fa-facebook icon-fb"></i>
+            <i class="fab fa-github icon-github"></i>
+            <i class="fab fa-twitter-square"></i>
+        </div>
+        <!--form container-->
+        <div class="form-container">
+                <form action="#" method="get" id="login">
+                    <i class="far fa-envelope input-email"></i><input type="email" class="input-field" autocomplete="off" placeholder="Enter Email..." required> 
+                    <br>
+                    <i class="fas fa-lock input-pswd"></i><input type="password" class="input-field" autocomplete="off" placeholder="Enter Password..." required>
+                    <br>
+                    <input type="checkbox" class="checkbox"><span>Remember me</span>
+                    <br>
+                    <button type="submit" class="submit-btn ">Login</button>
+                </form>
+        </div>
+        <div  class="form-container">
+            <form action="#" method="get" id="signup">
+                <i class="fas fa-user signup-user"></i><input type="text" class="input-field" autocomplete="off" placeholder="Enter UserId..." required> 
+                <br>    
+                <i class="far fa-envelope signup-email"></i><input type="email" class="input-field" autocomplete="off" placeholder="Enter Email..." required> 
+                <br>
+                <i class="fas fa-lock signup-pswd"></i><input type="password" class="input-field" autocomplete="off" placeholder="Enter Password..." required>
+                <br>
+                <input type="checkbox" class="checkbox"><span>I agree to the terms & condition</span>
+                <br>
+                <button type="submit" class="submit-btn ">Signup</button>
+            </form>
+    </div>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

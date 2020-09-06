@@ -1,0 +1,89 @@
+/* slider class that contain corousel images with a background */
+body {
+  --blue-color: #08415c;
+  --red-color: #cc2936;
+  --light-color: #eee5e9;
+  --peach-color: #f1bf98;
+  --gray-color: #6b818c;
+}
+.slider {
+  background-image: url("images//website-images/slider-images/autoparts.webp");
+  background-size: 40em 14em;
+}
+/* this class is used for giving bg-color in the slider */
+.corousel-bg {
+  top: 0em;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(8, 65, 92, 0.93);
+}
+/* autoparts pictures */
+.carousel-item {
+  z-index: 1;
+}
+/* Usp text on left in corousel */
+.usp {
+  top: 45%;
+  z-index: 2;
+  color: var(--light-color);
+  left: 2%;
+}
+
+/* for all h1 headings in body main headings */
+h1 {
+  font-family: "Roboto Slab", serif;
+  color: var(--blue-color);
+}
+/* sub category heading */
+h2 {
+  color: var(--red-color);
+  font-family: "Roboto Slab", serif;
+  margin-left: 5%;
+}
+/* discount heading on slider */
+.carousel-item h3 span{
+  color: var(--red-color);
+  font-weight: bold;
+  font-size: 2.8rem;
+  text-shadow: none
+}
+.carousel-item h3{
+color: var(--light-color);
+text-shadow: 1px 2px var(--red-color);
+}
+
+/* giving bg-color to the each category bt targeting their div */
+.all-category>div:nth-child(1),.all-category>div:nth-child(3){
+  background-color: rgba(107, 129, 140, 0.3);
+}
+.all-category>div:nth-child(2),.all-category>div:nth-child(4){
+  background-color: rgba(238, 229, 233,0.1);
+}
+/* buttons in product card */
+.btn {
+  background-color: var(--blue-color);
+  color: var(--light-color);
+}
+/* product cards */
+.card-title{
+  color: var(--blue-color);
+  font-weight: bold;
+}
+/* responsive font size for tagline and usp */
+
+@media screen and (max-width: 800px) {
+  .usp {
+    top:23%;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 620px) {
+  .usp {
+    top: 25%;
+    font-size: 1.6rem;
+  }
+  .carousel-item h3{
+    font-size: 1rem;
+  }
+}
+
