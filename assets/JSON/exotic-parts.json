@@ -105,5 +105,364 @@
        ]
       }
      ]
-    }
-   ]
+    },
+        {
+           "autoPart":"Exterior",
+           "description":"Autoparts accessories use externally includes Window Visor, Truck Accessories and door handles,locks and accessories",
+           "image_url":"",
+           "id":2,
+           "autoSubPart":[
+              {
+                 "c_id":1,
+                 "name":"Window Visors",
+                 "description":"Variety of sun visors",
+                 "url":"../images/json-url/2/honda-vezel-1.jpg",
+                 "category":"Ex",
+                 "products":[
+                    {
+                       "p_id":16,
+                       "name":"Honda Vezel 2013-2020 Premium Airpress",
+                       "description":"Great visibility,Enhance the beauty of your Car. For Honda Vezel 2013-2020",
+                       "price":3500,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/honda-vezel-1.jpg",
+                       "url-2":"../images/json-url/2/honda-vezel-2.jpg"
+                      },
+                    {
+                       "p_id":17,
+                       "name":"Toyota Hilux Vigo Champ Sun Visor",
+                       "description":"Great visibility.Toyota Hilux Vigo Champ Sun Visor Model 2005-2016",
+                       "price":5800,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/Toyota-Hilux-1.jpg",
+                       "url-2":"../images/json-url/2/Toyota-Hilux-2.jpg"
+                      },
+                    {
+                       "p_id":18,
+                       "name":"Daihatsu Cuore 2000-2012  Sun Visor",
+                       "description":"Premium.Enhance the beauty of your car. For Daihatsu Cuore 2000-2012 ",
+                       "price":4500,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/Daihatsu-Cuore-1.jpg",
+                       "url-2":"../images/json-url/2/Daihatsu-Cuore-2.jpg"
+                      }
+                 ]
+              },
+              {
+                 "c_id":2,
+                 "name":"Door Handles, Locks & Accessories",
+                 "description":"",
+                 "url":"../images/json-url/2/suzuki-door-handle-1.WEBP",
+                 "category":"Ex",
+                 "products":[
+                    {
+                       "p_id":19,
+                       "name":"Genuine Door Handle",
+                       "description":"Suzuki Mehran Genuine Door Handle RLH. For Suzuki Mehran 1988-2012",
+                       "price":800,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/suzuki-door-handle-1.WEBP",
+                       "url-2":"../images/json-url/2/suzuki-door-handle-2.WEBP"
+                      },
+                    {
+                       "p_id":20,
+                       "name":"Rear Door Left Side",
+                       "description":"Toyota Genuine Rear Door Left Side For Toyota Corolla XLi 2015-2017",
+                       "price":70000,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/rear-door-left-side-1.jpg",
+                       "url-2":"../images/json-url/2/rear-door-left-side-2.jpg"
+                      },
+                    {
+                       "p_id":21,
+                       "name":"Rear Door Right Side",
+                       "description":"Toyota Genuine Rear Door right Side For Toyota Corolla XLi 2015-2017",
+                       "price":7000,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/rear-door-right-side-1.jpg",
+                       "url-2":"../images/json-url/2/rear-door-right-side-2.jpg"
+                      },
+                    {
+                       "p_id":22,
+                       "name":"Door handle's",
+                       "description":"Door handle's for Toyota surf/forerunner 1992",
+                       "price":6800,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/door-handle-for-toyota-1.jpg",
+                       "url-2":"../images/json-url/2/door-handle-for-toyota-2.jpg"
+                      },
+                    {
+                       "p_id":23,
+                       "name":"Handle Cover Chrome",
+                       "description":"Suzuki Alto Handle Cover Chrome - Model 2018-2020.",
+                       "price":1200,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/suzuki-alto-handle-cover-1.jpg",
+                       "url-2":"../images/json-url/2/suzuki-alto-handle-cover-2.jpg"
+                      },
+                    {
+                       "p_id":24,
+                       "name":"Chrome Door Moulding",
+                       "description":"Toyoto Alto Chrome Door Moulding - Model 2018-2020",
+                       "price":4000,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/chrome-door-moulding-1.jpg",
+                       "url-2":"../images/json-url/2/chrome-door-moulding-2.jpg"
+                      },
+                    {
+                       "p_id":25,
+                       "name":"Door Guards Protector",
+                       "description":"Universal Door Guards Protector Long 2 Piece ",
+                       "price":400,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/door-guards-protector-1.jpg",
+                       "url-2":"../images/json-url/2/door-guards-protector-2.jpg"
+                      },
+                    {
+                       "p_id":26,
+                       "name":"Chrome Handle Covers",
+                       "description":"Honda Civic Chrome Handle Covers - Model 2006-2012 ",
+                       "price":1200,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/honda-civic-chrome-handle-covers-1.jpg",
+                       "url-2":"../images/json-url/2/honda-civic-chrome-handle-covers-2.jpg"
+                      }
+                 ]
+              },
+              {
+                 "c_id":3,
+                 "name":"Truck Accessories",
+                 "description":"Accessories for truck and heavy vehicles",
+                 "url":"../images/json-url/2/truck-cab-top-cover-1.jpg",
+                 "category":"Ex",
+                 "products":[
+                    {
+                       "p_id":27,
+                       "name":"Truck Cab Top Cover",
+                       "description":"Direct fit, Waterproof.Truck Cab Top Cover",
+                       "price":10000,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/truck-cab-top-cover-1.jpg",
+                       "url-2":"../images/json-url/2/truck-cab-top-cover-2.jpg"
+                      },
+                    {
+                       "p_id":28,
+                       "name":"Truck Bed Rack ",
+                       "description":"Truck Bed Rack, Powder coated. Material steel",
+                       "price":21000,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/truck-bed-rack-1.jpg",
+                       "url-2":"../images/json-url/2/truck-bed-rack-2.jpg"
+                      },
+                    {
+                       "p_id":29,
+                       "name":"Truck Bed Rack Mount Kit ",
+                       "description":"Includes (8) bolts, (8) nuts, and (8) washers",
+                       "price":8000,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/truck-bed-rack-mount-kit-1.jpg",
+                       "url-2":"../images/json-url/2/truck-bed-rack-mount-kit-2.jpg"
+                      },
+                    {
+                       "p_id":30,
+                       "name":"Wheel Locks for Aftermarket Custom Wheels SUV Truck",
+                       "description":"Set Veritek Black Acorn Bulge Tuner 1.75 Inch Wheel Locks for Aftermarket Custom Wheels SUV Truck ",
+                       "price":12000,
+                       "stock amount":40,
+                       "url-1":"../images/json-url/2/wheel-locks-1.jpg",
+                       "url-2":"../images/json-url/2/wheel-locks-2.jpg"
+                      }
+                 ]
+              }
+           ]
+        },
+      
+      
+          {
+            "autoPart": " Car Parts",
+            "description": "",
+            "image_url": "",
+            "id": 4,
+            "autoSubPart": [
+              {
+                "c_id": 1,
+                "name": "Back & Head Lights",
+                "description": "Back and Headlights of different models",
+                "url": "",
+                "category": "parts",
+                "products": [
+                  {
+                    "p_id": 46,
+                    "name": "Toyota Corolla TYC Back Light",
+                    "description": "Imported and oem standard fitment. Can be installed in:Toyota Corolla 2014-2020",
+                    "price": 4500,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                     "url-2":"../images/json-url/4/"
+                  }  
+                  ,
+                  {
+                    "p_id": 47,
+                    "name": "Depo Head Light For Santro Club RH",
+                    "description": "Imported. Can be installed in:Hyundai Santro 2003-2014",
+                    "price": 6000,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"   
+             }   
+                  ,
+                  {
+                    "p_id": 48,
+                    "name": "Toyota Corolla NIKE Style Headlights ",
+                    "description": "Imported. Can be installed in: Toyota Corolla Model 2014-2017",
+                    "price": 1800,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  } 
+                  ,
+                  {
+                    "p_id": 49,
+                    "name": "Honda Civic Headlights ",
+                    "description": "Imported. Honda Civic Headlamps Full Nike Style – Model 2012-2016",
+                    "price": 48000,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }   
+                  ,
+                  {
+                    "p_id": 50,
+                    "name": "Honda Civic Back lights 4D HD597",
+                    "description": "Imported. Honda Civic Back Lamp 4D HD597 - Model 2012-2016",
+                    "price": 24000,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }  
+      
+                ]
+              },
+              {
+                "c_id": 2,
+                "name": "Side Mirrors ",
+                "description": "Side Mirrors of different auto models",
+                "url": "",
+                "category": "parts",
+                "products": [
+                  {
+                    "p_id": 51,
+                    "name": "Toyota Corolla Taiwan Side Mirror",
+                    "description": "Taiwan made. Toyota Corolla Taiwan Side Mirror Xli, Gli, 2008-2014",
+                    "price": 4800,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }  
+                  ,
+                  {
+                    "p_id": 52,
+                    "name": "Toyota Vitz Side Mirror With Light",
+                    "description": "Imported. Toyota Vitz Side Mirror With Light RH 2006-2012",
+                    "price": 5800,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }   
+                  ,
+                  {
+                    "p_id": 53,
+                    "name": "Carbon Fiber Side Mirror with Indicator",
+                    "description": "Carbon Fiber Side Mirror with Indicator With Mirror Cover",
+                    "price": 3000,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }   
+                  ,
+                  {
+                    "p_id": 54,
+                    "name": "Honda Civic Carbon Fiber Side Mirror Cover ",
+                    "description": "Honda Civic Carbon Fiber Side Mirror Cover – Model 2016-2017",
+                    "price": 3900,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }   
+                  ,
+                  {
+                    "p_id": 55,
+                    "name": "Universal Front Parking Blind Spot Rear View Fender Mirror",
+                    "description": "Imported.High quality plastic fender mirror for Toyota Fortuner, Toyota Prado, Land Cruiser, Vigo. ",
+                    "price": 2000,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }  
+                  ,
+                  {
+                    "p_id": 56,
+                    "name": "Mirror Indicator Light Honda City",
+                    "description": "Imported. Mirror Indicator Light Honda City 2009-2020 - 34350-TM0-H01",
+                    "price": 1600,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }  
+      
+                ]
+              },
+              {
+                "c_id": 3,
+                "name": "Wiper Blades",
+                "description": "Variety of wiper blades for different auto models",
+                "url": "",
+                "category": "parts",
+                "products": [
+                  {
+                    "p_id": 57,
+                    "name": "Maximus Premium Silicone Wiper Blades  – 15 Inches",
+                    "description": "Maximus Premium Silicone Wiper Blades – 15 Inches",
+                    "price": 1200,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }   
+                  ,
+                  {
+                    "p_id": 58,
+                    "name": "Maximus Premium Silicone Wiper Blades  – 18 Inches",
+                    "description": "Maximus Premium Silicone Wiper Blades  – 18 Inches",
+                    "price": 1400,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                  }  
+                  ,
+                  {
+                    "p_id": 59,
+                    "name": "Maximus Premium Silicone Wiper Blades  – 19 Inches",
+                    "description": "Maximus Premium Silicone Wiper Blades  – 19 Inches",
+                    "price": 1600,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                    "url-2":"../images/json-url/4/"
+                    } 
+                  ,
+                  {
+                    "p_id": 60,
+                    "name": "Maximus Premium Silicone Wiper Blades  – 20 Inches",
+                    "description": "Maximus Premium Silicone Wiper Blades  – 20 Inches",
+                    "price": 1800,
+                    "stock amount": 40,
+                    "url-1": "../images/json-url/4/",
+                     "url-2":"../images/json-url/4/"
+                  }
+      
+                ]
+              }
+            ]
+          }
+        
+  
+]
