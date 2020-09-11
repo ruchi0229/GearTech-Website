@@ -74,7 +74,6 @@ h1 {
 /* sub category heading */
 h2 {
   color: var(--red-color);
-  font-family: "Roboto Slab", serif;
   margin-left: 5%;
 }
 /* discount heading on slider */
@@ -91,7 +90,7 @@ text-shadow: 1px 2px var(--red-color);
 
 /* giving bg-color to the each category bt targeting their div */
 .all-category>div:nth-child(1),.all-category>div:nth-child(3){
-  background-color: rgba(107, 129, 140, 0.3);
+  background-color: var(--blue-color);
 }
 .all-category>div:nth-child(2),.all-category>div:nth-child(4){
   background-color: rgba(238, 229, 233,0.1);
