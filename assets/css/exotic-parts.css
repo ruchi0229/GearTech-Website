@@ -253,3 +253,52 @@ text-shadow: 1px 2px var(--red-color);
 #signup{
     margin-left: 450px;
 } */
+/* Product Page styling */
+.container{
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+.product-price{
+  color: var(--red-color);
+  font-size: 30px;
+  font-weight: bold;
+}
+.col-md-6 input{
+  border: 1px solid var(--light-color);
+  border-radius: 2px;
+  height: 36px;
+  width: 36px;
+  text-align: center;
+}
+.add-product, .sub-product{
+  width:36px;
+  height:36px;
+  background:var(--peach-color);
+  padding:6px 5px 6px 5px;
+  border:1px solid var(--red-color);
+  border-radius: 2px;
+  display: inline-block;
+  text-align: center;
+}
+.cart{
+  font-size: 15px;
+  margin-left: 20px;
+}
+.wishlist{
+  margin-top: 10px;
+}
+.wishlist a{
+  color: var(--red-color);
+}
+.wishlist a:hover{
+  color: var(--peach-color);
+}
+.title{
+  font-weight: bold;
+  color: var(--blue-color);
+}
+.sec-product-price{
+  color: var(--red-color);
+  font-size: 16px;
+  font-weight: bold;
+}
