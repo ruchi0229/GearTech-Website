@@ -302,3 +302,39 @@ text-shadow: 1px 2px var(--red-color);
   font-size: 16px;
   font-weight: bold;
 }
+
+/* Product Page */
+.products-row{
+  margin-top: 30px;
+}
+.product-top img{
+  width: 100%;
+}
+.product-top img:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+.product-bottom h4{
+  font-size: 20px;
+  font-weight: bold;
+}
+.product-bottom p{
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+.product-top button:hover{
+  background-color: var(--peach-color);
+}
+.overlay{
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 10%;
+  margin-left: 0;
+  width: 7px;
+}
+.product-top:hover .overlay{
+  opacity: 1;
+  margin-left: 5%;
+  transition: 0.5s;
+}
