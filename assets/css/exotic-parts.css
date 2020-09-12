@@ -105,23 +105,6 @@ text-shadow: 1px 2px var(--red-color);
   color: var(--blue-color);
   font-weight: bold;
 }
-/* responsive font size for tagline and usp */
-
-@media screen and (max-width: 800px) {
-  .usp {
-    top:23%;
-    font-size: 2.5rem;
-  }
-}
-@media screen and (max-width: 620px) {
-  .usp {
-    top: 25%;
-    font-size: 1.6rem;
-  }
-  .carousel-item h3{
-    font-size: 1rem;
-  }
-}
  /* section that contains footer content */
  .footer-section{
   font-size: 0.8rem;
@@ -263,23 +246,29 @@ text-shadow: 1px 2px var(--red-color);
   font-size: 30px;
   font-weight: bold;
 }
-.col-md-6 input{
+
+.col-md-6 input, .cart-edit{
   border: 1px solid var(--light-color);
   border-radius: 2px;
-  height: 36px;
-  width: 36px;
+  height: 32px;
+  width: 32px;
   text-align: center;
+  font-weight: bolder;
+  color: var(--blue-color);
 }
 .add-product, .sub-product{
-  width:36px;
-  height:36px;
-  background:var(--peach-color);
+  width:32px;
+  height:32px;
+  font-weight: bolder;
+  background: var(--peach-color);
   padding:6px 5px 6px 5px;
   border:1px solid var(--red-color);
   border-radius: 2px;
   display: inline-block;
   text-align: center;
+  color: var(--blue-color);
 }
+
 .cart{
   font-size: 15px;
   margin-left: 20px;
@@ -337,4 +326,60 @@ text-shadow: 1px 2px var(--red-color);
   opacity: 1;
   margin-left: 5%;
   transition: 0.5s;
+}
+
+/* cart page styling */
+.cart-head{
+  background-color: var(--light-color);
+  color: var(--blue-color);
+}
+
+.price-sm{
+  display: none;
+}
+
+
+/*
+   start media quries for different screen sizes
+*/
+
+@media (max-width: 576px) { 
+ /* user cart table responsiveness */
+
+  .price{
+    display: none;
+  }
+
+  .price-sm{
+    display: block;
+    color: var(--blue-color);
+  }
+  
+  .cart-head{
+    font-size: 1rem;
+  }
+
+  .main-heading{
+    font-size: 1.75rem;
+  }
+ 
+}
+
+@media screen and (max-width: 800px) {
+  /* responsive font size for tagline and usp */
+  .usp {
+    top:23%;
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  /* responsive font size for tagline and usp */
+  .usp {
+    top: 25%;
+    font-size: 1.6rem;
+  }
+  .carousel-item h3{
+    font-size: 1rem;
+  }
 }

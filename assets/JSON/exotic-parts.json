@@ -1,111 +1,4 @@
 [
-    {
-     "autoPart": "Interior",
-     "description": "",
-     "image_url": "",
-     "id": 3,
-     "autoSubPart": [
-      {
-       "c_id": 1,
-       "name": "Mobile Electronics",
-       "description": "",
-       "url": "",
-       "category": "IN",
-       "products": [
-        {
-         "p_id": 1,
-         "name": "",
-         "description": "",
-         "price": 1800,
-         "stock amount": 40,
-         "url": ""
-        },
-        {
-         "p_id": 2,
-         "name": "",
-         "description": "",
-         "price": 1800,
-         "stock amount": 40,
-         "url": ""
-        },
-        {
-         "p_id": 3,
-         "name": "",
-         "description": "",
-         "price": 1800,
-         "stock amount": 40,
-         "url": ""
-        }
-       ]
-      },
-      {
-       "c_id": 2,
-       "name": "Horns and Components",
-       "description": "",
-       "url": "",
-       "category": "IN",
-       "products": [
-        {
-         "p_id": 4,
-         "name": "",
-         "description": "",
-         "price": 1800,
-         "stock amount": 40,
-         "url": ""
-        },
-        {
-         "p_id": 5,
-         "name": "",
-         "description": "",
-         "price": 1800,
-         "stock amount": 40,
-         "url": ""
-        },
-        {
-         "p_id": 6,
-         "name": "",
-         "description": "",
-         "price": 1800,
-         "stock amount": 40,
-         "url": ""
-        }
-       ]
-      },
-      {
-       "c_id": 3,
-       "name": "Switches, Relays, Wiring Components",
-       "description": "",
-       "url": "",
-       "category": "IN",
-       "products": [
-        {
-         "p_id": 7,
-         "name": "",
-         "description": "",
-         "price": 1800,
-         "stock amount": 40,
-         "url": ""
-        },
-        {
-         "p_id": 8,
-         "name": "",
-         "description": "",
-         "price": 1800,
-         "stock amount": 40,
-         "url": ""
-        },
-        {
-         "p_id": 9,
-         "name": "",
-         "description": "",
-         "price": 1800,
-         "stock amount": 40,
-         "url": ""
-        }
-       ]
-      }
-     ]
-    },
         {
            "autoPart":"Exterior",
            "description":"Autoparts accessories use externally includes Window Visor, Truck Accessories and door handles,locks and accessories",
@@ -276,8 +169,116 @@
               }
            ]
         },
+
+        {
+          "autoPart": "Interior",
+          "description": "Autoparts accessories use internally like Mobile Electronics, Horns and Components, Switches, Relays, Wiring Components",
+          "image_url": "",
+          "id": 3,
+          "autoSubPart": [
+           {
+            "c_id": 1,
+            "name": "Mobile Electronics",
+            "description": "",
+            "url": "",
+            "category": "IN",
+            "products": [
+             {
+              "p_id": 1,
+              "name": "",
+              "description": "",
+              "price": 1800,
+              "stock amount": 40,
+              "url": ""
+             },
+             {
+              "p_id": 2,
+              "name": "",
+              "description": "",
+              "price": 1800,
+              "stock amount": 40,
+              "url": ""
+             },
+             {
+              "p_id": 3,
+              "name": "",
+              "description": "",
+              "price": 1800,
+              "stock amount": 40,
+              "url": ""
+             }
+            ]
+           },
+           {
+            "c_id": 2,
+            "name": "Horns and Components",
+            "description": "",
+            "url": "",
+            "category": "IN",
+            "products": [
+             {
+              "p_id": 4,
+              "name": "",
+              "description": "",
+              "price": 1800,
+              "stock amount": 40,
+              "url": ""
+             },
+             {
+              "p_id": 5,
+              "name": "",
+              "description": "",
+              "price": 1800,
+              "stock amount": 40,
+              "url": ""
+             },
+             {
+              "p_id": 6,
+              "name": "",
+              "description": "",
+              "price": 1800,
+              "stock amount": 40,
+              "url": ""
+             }
+            ]
+           },
+           {
+            "c_id": 3,
+            "name": "Switches, Relays, Wiring Components",
+            "description": "",
+            "url": "",
+            "category": "IN",
+            "products": [
+             {
+              "p_id": 7,
+              "name": "",
+              "description": "",
+              "price": 1800,
+              "stock amount": 40,
+              "url": ""
+             },
+             {
+              "p_id": 8,
+              "name": "",
+              "description": "",
+              "price": 1800,
+              "stock amount": 40,
+              "url": ""
+             },
+             {
+              "p_id": 9,
+              "name": "",
+              "description": "",
+              "price": 1800,
+              "stock amount": 40,
+              "url": ""
+             }
+            ]
+           }
+          ]
+         },
       
-      
+        
           {
             "autoPart": " Car Parts",
             "description": "Varirty of autoparts includes Back and headlights, Mirrors and wiper blades",
@@ -462,7 +463,5 @@
                 ]
               }
             ]
-          }
-        
-  
+          }      
 ]

@@ -6,20 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Detail</title>
+
     <!--bootsrap  Styles sheet  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <!-- style sheet for complete website -->
     <link rel="stylesheet" href="../assets/css/exotic-parts.css">
+    
     <!-- font family Montserrat and roboto slab -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Roboto+Slab:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <!-- font awesome icon link -->
+    
+        <!-- font awesome icon link -->
     <script src="https://kit.fontawesome.com/ca30ddfff9.js" crossorigin="anonymous"></script>
 </head>
 
@@ -28,9 +28,11 @@
         <!-- first nav bar with anchor tags  contains logo, about, contact us , login and add to cart -->
         <nav class="navbar navbar-expand-lg fixed-top p-0 font-weight-bold mb-4">
 
-            <!-- Navbar brand -->
-            <img class="navbar-brand pt-0 ml-3" src="../assets/images/website-images/logo.png" alt="exotic parts logo"
-                width="85em">
+             <!-- Navbar brand -->
+             <a href="../index.html">
+                <img class="navbar-brand pt-0 ml-3" src="../assets/images/website-images/logo.png"
+                    alt="exotic parts logo" width="85em">
+            </a>
 
             <!-- Collapse button -->
             <button class="navbar-toggler toggler-example navbar-light" type="button" data-toggle="collapse"
@@ -51,8 +53,9 @@
                                     viewBox="0 0 172 172" style=" fill:#000000;">
                                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1.2"
                                         stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
-                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                        font-weight="none" font-size="none" text-anchor="none"
+                                        style="mix-blend-mode: normal">
                                         <path d="M0,172v-172h172v172z" fill="none"></path>
                                         <g fill="#08415c">
                                             <path
@@ -73,8 +76,9 @@
                                     viewBox="0 0 172 172" style=" fill:#000000;">
                                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
                                         stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
-                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                        font-weight="none" font-size="none" text-anchor="none"
+                                        style="mix-blend-mode: normal">
                                         <path d="M0,172v-172h172v172z" fill="none"></path>
                                         <g fill="#08415c">
                                             <path
@@ -91,15 +95,16 @@
                 <ul class="navbar-nav mr-4">
                     <!-- login and signup -->
                     <li class="nav-item pl-4 pl-lg-0 pl-md-4 pl-sm-4">
-                        <a class="nav-link d-flex flex-lg-column align-items-center" href="html/form.html">
+                        <a class="nav-link d-flex flex-lg-column align-items-center" href="form.html">
                             <!-- login icon  -->
                             <span class="pr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36"
                                     viewBox="0 0 172 172" style=" fill:#000000;">
                                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
                                         stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
-                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                        font-weight="none" font-size="none" text-anchor="none"
+                                        style="mix-blend-mode: normal">
                                         <path d="M0,172v-172h172v172z" fill="none"></path>
                                         <g fill="#08415c">
                                             <path
@@ -113,7 +118,7 @@
                     </li>
                     <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
                         <!-- Add to cart -->
-                        <a class="nav-link d-flex flex-lg-column align-items-center" href="#">
+                        <a class="nav-link d-flex flex-lg-column align-items-center" href="user-cart.html">
                             <!--Add to Cart icon-->
                             <span class="pr-1">
                                 <svg width="3.2em" height="3em" viewBox="0 0 16 16" class="bi bi-cart4"
@@ -137,16 +142,19 @@
                     <!-- brand logo -->
                     <span>
                         <img src="assets/images/website-images/logo-crop.png" alt="" width="50px">
-                        <span class="font-weight-bolder">Categories</span></span>
+                        <span class="font-weight-bolder">SHOP BY CATEGORIES:</span></span>
                 </li>
                 <li class="dropdown">
                     <!-- first category -->
                     <a class=" dropdown-toggle text-decoration-none " id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" href="#">Tyre and Wheels</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Wheel Accessories <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="#">Nuts <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="#">Tyres <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Wheel Accessories <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Nuts <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Tyres <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
                 <li class=" dropdown ">
@@ -154,9 +162,12 @@
                     <a class="dropdown-toggle text-decoration-none" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" href="#">Exterior</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Window Visors <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="../html/product.html"></a>Door Handles, Locks & Accessories <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="#">Truck Accessories <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Window Visors <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Door Handles, Locks & Accessories <span
+                                class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Truck Accessories <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
                 <li class=" dropdown ">
@@ -164,9 +175,12 @@
                     <a class="dropdown-toggle text-decoration-none" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" href="#"> Interior</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Mobile Electronics <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="#">Horns and Components <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="#">Switches, Relays and Wiring Components <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Mobile Electronics <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Horns and Components <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Switches, Relays and Wiring Components <span
+                                class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
                 <li class=" dropdown ">
@@ -174,9 +188,12 @@
                     <a class="dropdown-toggle text-decoration-none" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" href="#">Car Parts</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Back & Head Lights <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="#">Side Mirrors <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="#">Wiper Blades <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Back & Head Lights <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Side Mirrors <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="#">Wiper Blades <span class="category-arrow"><i
+                                    class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
             </ul>
