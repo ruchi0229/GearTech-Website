@@ -17,12 +17,9 @@ let getUrlParams = function (url) {
 // asynchronous function to get fetch products from JSON
 async function getProducts() {
   let products = true;
-  let hasNavigationBar = false;
 
   // get the id's
   let params = getUrlParams(window.location.href);
-  let id = params.id; // main category id
-  let cid = params.c_id; // sub-category id
   let pid = params.p_id; // product id url
 
   // fetch the data from local json file
@@ -40,26 +37,23 @@ async function getProducts() {
       // get product array from each sub category
       let product_categories = sub_cat.products;
       product_categories.forEach((product_detail) => {
+        var totalPrice = 0;
+
         // console.log("subcat: " + sub_cat.c_id);
         if (product_detail.p_id == pid) {
-          // console.log(category.id + " ---- " + sub_cat.c_id);
           products = sub_cat.products;
           // console.log(products);
-          
-
           // set the products information and product specs into the UI
           document.querySelector(".products-container").innerHTML = products
             .map((product) => {
-              
-              if(product.p_id == pid){
-                if(product.stock_amount>10){
-                 product.stock_amount = "In Stock";
-                 }
-                 else{
-                  product.stock_amount= "Out Of Stock";
-                 }
-        
-              return `
+              if (product.p_id == pid) {
+                if (product.stock_amount > 10) {
+                  product.stock_amount = "In Stock";
+                } else {
+                  product.stock_amount = "Out Of Stock";
+                }
+
+                return `
               <div class = "container">
               <div class="row">
               <div class="col-md-6">
@@ -102,10 +96,10 @@ async function getProducts() {
 
                 <div>
                     <label>Quantity:</label>
-                    <span class="sub-product">-</span>
-                    <input type="text" name="quantity" value="1">
-                    <span class="add-product">+</span>
-                    <button type="button" class="btn btn-default cart">Add to Cart</button>
+                    <button class="sub-product">-</button>
+                    <input type="number" name="quantity" value="1" disabled class="product-quantity">
+                    <button class="add-product">+</button>
+                    <button type="button" class="btn btn-default cart add-to-cart">Add to Cart</button>
                 </div>
 
                 <p class="wishlist"><a href="#"><b>Add to Wishlist</b></a></p>
@@ -127,19 +121,65 @@ async function getProducts() {
             </div>
         </div>
     </div> `;
-       
               }
             })
             .join("");
-          
-        } 
-        else {
-          console.log("Category or Sub Category Id's doesn't Match!");
-        }
-      });
-    });
-  });
-}
 
+          // adding add to cart functionality using the product data
+          function addToCart() {
+            let Quantity = 1;
+            // get elements 
+            let subtractProduct = document.querySelector(".sub-product");
+            let addProduct = document.querySelector(".add-product");
+            var productQuantity = document.querySelector(".product-quantity");
+            let addToCart = document.querySelector(".add-to-cart");
+            console.log("first price" + totalPrice);
+            // add totalprice and quantity 
+            addProduct.onclick = function () {
+              if (productQuantity.value == 1){
+                totalPrice =  product_detail.price;
+              }
+              totalPrice += product_detail.price;
+              Quantity++;
+              productQuantity.value = Quantity;
+              console.log("add price" + totalPrice);
+            };
+             // subtract totalprice and quantity 
+            subtractProduct.onclick = function () {
+              if (Quantity > 1) {
+                totalPrice -= product_detail.price;
+                Quantity--;
+                productQuantity.value = Quantity;
+                console.log("sub price" + totalPrice);
+              }
+            };
+            // Save the total price and quantiy from all the products(in progress)
+            addToCart.onclick = function () {
+              if (productQuantity.value == 1) {
+                totalPrice = product_detail.price;
+                console.log("final price1:" + totalPrice);
+                alert(`Total Amount is: ${totalPrice} 
+                Quantity is ${productQuantity.value} `)
+                
+              } else {
+                console.log("final price2:" + totalPrice);
+                alert(`Total Amount is: ${totalPrice} 
+                Quantity is ${productQuantity.value} `)              }
+            };
+          }
+
+          addToCart();
+        }
+
+        // else {
+        //   console.log("Category or Sub Category Id's doesn't Match!");
+        // }
+      });
+      
+    });
+    
+  });
+  
+}
 //function calling - get products
 getProducts();
