@@ -445,5 +445,175 @@
         ]
       }
     ]
+  },
+  {
+    "autoPart": " Tyres & Wheels",
+    "description": "Varirty of autoparts includes Tyres, Nuts and Wheels Aceesesories",
+    "image_url": "",
+    "id": 1,
+    "autoSubPart": [
+      {
+        "c_id": 5,
+        "name": "Tyres ",
+        "description": "Different Tyre Variety",
+        "url": "../images/json-url/1/Bridgeston-tyre-1.jpg",
+        "category": "parts",
+        "products": [
+          {
+            "p_id": 65,
+            "name": "Bridgeston Tyre 14570-R12",
+            "description": "These tires deliver a thrilling ride for drivers who want the most out of their sports car or performance vehicle. ",
+            "price": 3000,
+            "stock amount": 30,
+            "url-1": "../images/json-url/1/Bridgeston-tyre-1.jpg",
+            "url-2": "../images/json-url/1/Bridgeston-tyre-2.jpg"
+          },
+          {
+            "p_id": 66,
+            "name": "Continental Tyre 205-55-R16",
+            "description": "High Quality Continental Tyre for your Automobile.",
+            "price": 4000,
+            "stock amount": 25,
+            "url-1": "../images/json-url/1/Continental-Tyre-1.jpg",
+            "url-2": "../images/json-url/1/Continental-Tyre-2.jpg"
+          },
+          {
+            "p_id": 67,
+            "name": "Dunlop Tyre 31-10-50 R15 ",
+            "description": "Best Tyre For Your Vehicle",
+            "price": 4000,
+            "stock amount": 15,
+            "url-1": "../images/json-url/1/Dunlop-Tyre-1.jpg",
+            "url-2": "../images/json-url/1/Dunlop-Tyre-1.jpg"
+          },
+          {
+            "p_id": 68,
+            "name": "BF Goodrich",
+            "description": "The BF Goodrich provides incredible traction for rocks, mud and dirt and is great on slick surfaces.",
+            "price": 5000,
+            "stock amount": 10,
+            "url-1": "../images/json-url/1/BF-Goodrich-Tyre-1.jpg",
+            "url-2": "../images/json-url/1/BF-Goodrich-Tyre-2.jpg"
+          },
+          {
+            "p_id": 69,
+            "name": "YOKOHAMA GEOLANDAR M/T G003",
+            "description": "The tire offers an excellent all weather traction",
+            "price": 2800,
+            "stock amount": 13,
+            "url-1": "../images/json-url/1/Yakohama-Tyre-1.jpg",
+            "url-2": "../images/json-url/1/Yakohama-Tyre-2.jpeg"
+          }
+        ]
+      },
+      {
+        "c_id": 6,
+        "name": "Wheel Acessories ",
+        "description": "Variety of different Wheel Acessories",
+        "url": "../images/json-url/1/Wheel-Cover-1.jpg",
+        "category": "parts",
+        "products": [
+          {
+            "p_id": 70,
+            "name": "Wheel Cover ABS – 15 inches – WK1-1SL-15",
+            "description": " The wheel cap is designed to perfection and sets your car apart from other drivers",
+            "price": 4000,
+            "stock amount": 20,
+            "url-1": "../images/json-url/1/Wheel-Cover-1.jpg",
+            "url-2": "../images/json-url/1/Wheel-Cover-2.jpg"
+          },
+          {
+            "p_id": 71,
+            "name": "Turtle Wax Wet",
+            "description": "Active foam formula encapsulates dirt and grime before lifting it from the tyre.",
+            "price": 1500,
+            "stock amount": 25,
+            "url-1": "../images/json-url/1/Turtle-Wax-Wet&Black-Foam-1.jpg",
+            "url-2": "../images/json-url/1/Turtle-Wax-Wet&Black-Foam-2.jpg"
+          },
+          {
+            "p_id": 72,
+            "name": "TURTLE WAX WET’N BLACK ULTRA WET TIRE SHINE",
+            "description": "Protects against harmful UV rays",
+            "price": 1000,
+            "stock amount": 22,
+            "url-1": "../images/json-url/1/Turtle-Wax-Ultra-Wet-Tire-1.jpg",
+            "url-2": "../images/json-url/1/Turtle-Wax-Ultra-Wet-Tire-2.jpg"
+          },
+          {
+            "p_id": 73,
+            "name": "Bronze Wheel Cap",
+            "description": " The bronze is excellent, almost a satin/matte finish to it with a really nice subtle sparkle when in the sunlight.",
+            "price": 4000,
+            "stock amount": 30,
+            "url-1": "../images/json-url/1/Brounze-Wheel-Cup-1.jpg",
+            "url-2": "../images/json-url/1/Brounze-Wheel-Cup-2.jpg"
+          },
+          {
+            "p_id": 74,
+            "name": "Chrome Wheel Cap",
+            "description": "This custom wheelcover has a chrome finish and is designed to fit cars with 16 inch (r-16) tires.",
+            "price": 2000,
+            "stock amount": 10,
+            "url-1": "../images/json-url/1/Chrome-Wheel-Cap-1.jpg",
+            "url-2": "../images/json-url/1/Chrome-Wheel-Cap-2.jpg"
+          },
+          {
+            "p_id": 75,
+            "name": "Center Wheel Hub Cap",
+            "description": "wheel hubs can also be useful for providing some protection for your wheels against the elements and the debris of the road.",
+            "price": 2000,
+            "stock amount": 40,
+            "url-1": "../images/json-url/1/Center-Wheel-Cap-1.jpg",
+            "url-2": "../images/json-url/1/Center-Wheel-Cap-2.jpg"
+          }
+        ]
+      },
+      {
+        "c_id": 7,
+        "name": "Nuts",
+        "description": "Variety of nuts for vehicles",
+        "url": "../images/json-url/1/d1-spec-lugnuts-1.jpg",
+        "category": "parts",
+        "products": [
+          {
+            "p_id": 76,
+            "name": "D1 Spec Lug Nuts / Wheel Nuts",
+            "description": "d1 spec short wheel nuts m12x1 25 aluminum 36mm 35432 0d3",
+            "price": 1500,
+            "stock amount": 35,
+            "url1": "../images/json-url/1/d1-spec-lugnuts-1.jpg",
+            "url2": "../images/json-url/1/d1-spec-lugnuts-2.jpg"
+          },
+          {
+            "p_id": 77,
+            "name": "Rays Lug Nuts / Wheel Nuts",
+            "description": "Rays Lug Nuts / Wheel Nuts / Wheel Screws 1.5m",
+            "price": 3200,
+            "stock amount": 37,
+            "url1": "../images/json-url/1/rays-lug-nuts-1.jpg",
+            "url2": "../images/json-url/1/rays-lug-nuts-2.jpg"
+          },
+          {
+            "p_id":78,
+            "name": "BLOX Spikes Lug Nuts / Wheel Nuts ",
+            "description": "BLOX Spikes Lug Nuts / Wheel Nuts / Wheel Screws Blue 1.25mm",
+            "price": 1800,
+            "stock amount": 20,
+            "url1": "../images/json-url/1/spikes-lug-nuts-wheelnuts-1.jpg",
+            "url2": "../images/json-url/1/spikes-lug-nuts-wheelnuts-2.jpg"
+          },
+          {
+            "p_id": 79,
+            "name": "Car Truck Aluminum Racing ",
+            "description": "Car Truck Aluminum Racing Colored Steel M12X1.5 Titanium Spike Wheel Lug Nuts",
+            "price": 1200,
+            "stock amount": 40,
+            "url1": "../images/json-url/1/car-aluminium-nuts-1.webp",
+            "url2": "../images/json-url/1/car-aluminium-nuts-1.webp"
+          }
+        ]
+      }
+    ]
   }
 ]
