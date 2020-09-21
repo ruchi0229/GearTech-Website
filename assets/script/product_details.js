@@ -61,7 +61,6 @@ async function getProducts() {
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -84,7 +83,7 @@ async function getProducts() {
             </div>
 
             <div class="col-md-6 product-det">
-                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / ${sub_cat.name}/${product_detail.name}</b></p>
+                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / ${sub_cat.name} / ${product_detail.name}</b></p>
                 <hr></p>
                 <h1>${product.name}</h1>
                 <p>Product Code: ${product.p_id}</p>
