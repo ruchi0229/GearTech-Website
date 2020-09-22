@@ -126,8 +126,8 @@
             "description": "These tires deliver a thrilling ride for drivers who want the most out of their sports car or performance vehicle. ",
             "price": 3000,
             "stock amount": 30,
-            "url1": "../assets/images/json-url/1/bridgestone-tyre-1.jpg",
-            "url2": "../assets/images/json-url/1/bridgestone-tyre-2.jpg"
+            "url1": "../assets/images/json-url/1/Bridgestone-tyre-1.jpg",
+            "url2": "../assets/images/json-url/1/Bridgestone-tyre-2.jpg"
           },
           {
             "p_id": 66,
@@ -135,8 +135,8 @@
             "description": "High Quality Continental Tyre for your Automobile.",
             "price": 4000,
             "stock amount": 25,
-            "url1": "../assets/images/json-url/1/continental-tyre-1.jpg",
-            "url2": "../assets/images/json-url/1/continental-tyre-2.jpg"
+            "url1": "../assets/images/json-url/1/Continental-tyre-1.jpg",
+            "url2": "../assets/images/json-url/1/Continental-tyre-2.jpg"
           },
           {
             "p_id": 67,
