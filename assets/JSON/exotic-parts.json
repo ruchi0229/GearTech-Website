@@ -215,7 +215,7 @@
         "c_id": 2,
         "name": "Door Handles, Locks & Accessories",
         "description": "Variety of accessories includes door handle and locka",
-        "url": "../assets/images/json-url/2/suzuki-door-handle-1.WEBP",
+        "url": "../assets/images/json-url/2/suzuki-door-handle-1.webp",
         "category": "Ex",
         "products": [
           {
@@ -224,8 +224,8 @@
             "description": "Suzuki Mehran Genuine Door Handle RLH. For Suzuki Mehran 1988-2012",
             "price": 800,
             "stock_amount": 30,
-            "url1": "../assets/images/json-url/2/suzuki-door-handle-1.WEBP",
-            "url2": "../assets/images/json-url/2/suzuki-door-handle-2.WEBP"
+            "url1": "../assets/images/json-url/2/suzuki-door-handle-1.webp",
+            "url2": "../assets/images/json-url/2/suzuki-door-handle-2.webp"
           },
           {
             "p_id": 20,
