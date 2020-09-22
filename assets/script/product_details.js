@@ -14,8 +14,8 @@ let getUrlParams = function (url) {
   return params;
 };
 
-// asynchronous function to get fetch products from JSON
-async function getProducts() {
+// asynchronous function to get fetch product details from JSON
+async function getProductDetails() {
   let products = true;
 
   // get the id's
@@ -126,59 +126,51 @@ async function getProducts() {
 
           // adding add to cart functionality using the product data
           function addToCart() {
-            let Quantity = 1;
+            let quantity = 1;
+            let totalPrice = product_detail.price;
             // get elements 
             let subtractProduct = document.querySelector(".sub-product");
             let addProduct = document.querySelector(".add-product");
             var productQuantity = document.querySelector(".product-quantity");
             let addToCart = document.querySelector(".add-to-cart");
             console.log("first price" + totalPrice);
+
             // add totalprice and quantity 
             addProduct.onclick = function () {
-              if (productQuantity.value == 1){
-                totalPrice =  product_detail.price;
-              }
+              quantity++;
               totalPrice += product_detail.price;
-              Quantity++;
-              productQuantity.value = Quantity;
-              console.log("add price" + totalPrice);
+              productQuantity.value = quantity;
+              console.log("add price: " + totalPrice);
             };
-             // subtract totalprice and quantity 
+
+            // subtract totalprice and quantity 
             subtractProduct.onclick = function () {
-              if (Quantity > 1) {
+              if (quantity > 1) {
+                quantity--;
                 totalPrice -= product_detail.price;
-                Quantity--;
-                productQuantity.value = Quantity;
+                productQuantity.value = quantity;
                 console.log("sub price" + totalPrice);
               }
             };
+
             // Save the total price and quantiy from all the products(in progress)
             addToCart.onclick = function () {
-              if (productQuantity.value == 1) {
-                totalPrice = product_detail.price;
-                console.log("final price1:" + totalPrice);
-                alert(`Total Amount is: ${totalPrice} 
-                Quantity is ${productQuantity.value} `)
-                
-              } else {
-                console.log("final price2:" + totalPrice);
-                alert(`Total Amount is: ${totalPrice} 
-                Quantity is ${productQuantity.value} `)              }
+              console.log("final price2:" + totalPrice);
+              alert(`Total Amount is: ${totalPrice} 
+                Quantity is ${productQuantity.value} `);
             };
           }
 
           addToCart();
         }
 
-        // else {
-        //   console.log("Category or Sub Category Id's doesn't Match!");
-        // }
       });
-      
+
     });
-    
+
   });
-  
+
 }
-//function calling - get products
-getProducts();
+
+//function calling - get product details
+getProductDetails();
