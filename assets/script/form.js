@@ -218,13 +218,13 @@ function signUpButton() {
         password:pswdData
        
       };
-      let signUpKey = Date.now();
+      // let signUpKey = Date.now();
       // localStorage.setItem(signUpKey,JSON.stringify(signUpdata));
       users.push(signUpdata);
-      localStorage.setItem(signUpKey, JSON.stringify(users));
+      localStorage.setItem("users", JSON.stringify(users));
     // console.log(users.push(signUpdata));
-    // console.log(users);
-    // console.log(signUpdata);
+    console.log(users);
+    console.log(signUpdata);
     
     
     window.location.assign(login());
@@ -300,6 +300,7 @@ function loginButton() {
   for (let i = 0; i < users.length; i++) {
    
 
+    console.log(users[i].email);
     if (loginEmail.value == users[i].email) {
       if (loginPassword.value == users[i].password) {
         flag = true;
