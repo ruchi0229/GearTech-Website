@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/0413a50a0f.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-<body id="form-bg">
+<body id="form-bg" onload="login()">
     <!--form box-->
     <div class="wrapper">
         <!--button container-->
@@ -27,39 +27,59 @@
         </div>
         <!--form container-->
         <div class="form-container">
-                <form action="#" method="get" id="login" onsubmit="loginButton()">
-                    <i class="far fa-envelope input-email"></i><input type="email" class="input-field" id="login-email"  onfocus="loginEmailfocus()" onblur="loginEmailblur()"  autocomplete="off" placeholder="Enter Email..."> 
-                    <span id="loginemail-data" class="block"></span>
-                    <br>
-                    <i class="fas fa-lock input-pswd"></i><input type="password" class="input-field" id="login-paswd"  onfocus="loginPasswordfocus()" onblur="loginPasswordblur()" autocomplete="off" placeholder="Enter Password...">
-                    <span id="loginpaswd-data" class="block"></span> 
-                    <br>
-                    <input type="checkbox" class="checkbox"><span>Remember me</span>
-                    <br>
-                    <button type="submit" class="submit-btn" id="login-btn">Login</button>
-                </form>
+            <form action="#" method="get" id="login" onsubmit="loginButton()">
+                <div class="form-icon">
+                <i class="far fa-envelope input-email"></i><input type="email" class="input-field" id="login-email"
+                    onfocus="loginEmailfocus()" onkeyup="loginEmailkeyup()" autocomplete="off"
+                    placeholder="Enter Email...">
+                </div>    
+                <small id="loginemail-data" class="block"></small>
+                <br>
+                <div class="form-icon">   
+                <i class="fas fa-lock input-pswd"></i><input type="password" class="input-field" id="login-paswd"
+                    onfocus="loginPasswordfocus()" onkeyup="loginPasswordkeyup()" autocomplete="off"
+                    placeholder="Enter Password...">
+                </div>     
+                <small id="loginpaswd-data" class="block"></small>
+                <br>
+                <input type="checkbox" class="checkbox"><span>Remember me</span>
+                <br>
+                <button type="submit" class="submit-btn" id="login-btn">Login</button>
+            </form>
         </div>
-        <div  class="form-container">
-            <form action="#" method="get" id="signup" onsubmit="signUpButton()">  
-                <i class="fas fa-user signup-user"></i><input type="text" class="input-field signup-input"  id="full-name" onfocus="fullnameFocus()" onblur="fullnameBlur()" onkeyup="fullnameKeyup()"  autocomplete="off" placeholder="Enter Full Name..."> 
-                <span id="name-data" class="block"></span>
-                <!-- <br>     -->  
-                <i class="far fa-envelope signup-email"></i><input type="text" class="input-field signup-input"  id="signUp-email" onfocus="emailFocus()" onblur="emailBlur()" onkeyup="emailKeyup()" autocomplete="off" placeholder="Enter Email..."> 
-                <span id="email-data" class="block"></span>
-                <!-- <br> -->
-                <i class="fas fa-lock signup-pswd"></i><input type="password" class="input-field signup-input" id="signUp-password" onfocus="passwordFocus()" onblur="passwordBlur()" onkeyup="passwordKeyup()" autocomplete="off" placeholder="Enter Password...">
-                <span id="paswd-data" class="block"></span>
-                <!-- <br> -->
-                <i class="fas fa-lock confirm-pswd"></i><input type="password" class="input-field signup-input"  id="confirm-password" onfocus="confirmPasswordFocus()" onblur="confirmPasswordBlur()" onkeyup="confirmPasswordKeyup()" autocomplete="off" placeholder="Confirm Password...">
-                <span id="confirmPaswd-data" class="block"></span>
+        <div class="form-container">
+            <form action="#" method="get" id="signup" onsubmit="signUpButton()">
+                <div class="form-icon">
+                <i class="fas fa-user signup-user"></i><input type="text" class="input-field signup-input"
+                    id="full-name" onfocus="fullnameFocus()" onblur="fullnameBlur()" onkeyup="fullnameKeyup()"
+                    autocomplete="off" placeholder="Enter Full Name...">
+                </div>    
+                <small id="name-data" class="block"></small>
+                <div class="form-icon">
+                    <i class="far fa-envelope signup-email"></i><input type="text" class="input-field signup-input"
+                        id="signUp-email" onfocus="emailFocus()" onblur="emailBlur()" onkeyup="emailKeyup()"
+                        autocomplete="off" placeholder="Enter Email...">
+                </div>
+                <small id="email-data" class="block"></small>
+                <div class="form-icon">
+                    <i class="fas fa-lock signup-pswd"></i><input type="password" class="input-field signup-input"
+                        id="signUp-password" onfocus="passwordFocus()" onblur="passwordBlur()" onkeyup="passwordKeyup()"
+                        autocomplete="off" placeholder="Enter Password...">
+                </div>
+                <small id="paswd-data" class="block"></small>
+                <div class="form-icon">
+                    <i class="fas fa-lock confirm-pswd"></i><input type="password" class="input-field signup-input"
+                        id="confirm-password" onfocus="confirmPasswordFocus()" onblur="confirmPasswordBlur()"
+                        onkeyup="confirmPasswordKeyup()" autocomplete="off" placeholder="Confirm Password...">
+                </div>
+                <small id="confirmPaswd-data" class="block"></small>
                 <br>
                 <input type="checkbox" class="checkbox"><span>I agree to the terms & condition</span>
                 <br>
                 <button type="submit" class="submit-btn" id="signup-btn" onclick="">Signup</button>
             </form>
+        </div>
     </div>
-    </div>
-
     <script src="../assets/script/form.js"></script>
 </body>
 </html>
