@@ -184,30 +184,39 @@ text-shadow: 1px 2px var(--red-color);
 }
 /* styling of form  */
 .form-container form{
-  top: 180px;
+  top: 140px;
   position: absolute;
   width: 280px;
   transition: .5s;
 }
 /* input field  */
 .input-field{
-  position: relative;
+  /* position: relative; */
   width: 90%;
-  padding: 5px 20px;
+  padding: 5px 10px;
   border: none;
   background-color: transparent;
   outline: none;
-  border-bottom: 1px solid var(--blue-color);
-  margin: 10px auto;
+  /* border-bottom: 1px solid var(--blue-color); */
+  margin: 20px auto 5px auto;
 }
-.input-email{
+.form-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--blue-color);
+}
+.form-icon > i {
+  height: 0px;
+}
+/* .input-email{
   position: absolute;
   top: 18px; 
 }
 .input-pswd{
   position: absolute;
   top: 83px; 
-}
+} */
 .submit-btn{
   border: none;
   padding: 10px 30px;
@@ -230,7 +239,7 @@ text-shadow: 1px 2px var(--red-color);
     position: absolute;
 }
 /* styling for form icons  */
-.signup-user{
+/* .signup-user{
   position: absolute;
   top: 18px;
 }
@@ -246,12 +255,13 @@ text-shadow: 1px 2px var(--red-color);
 .confirm-pswd{
   position: absolute;
   top: 155px;
-}
+} */
 /* styling of error show in js  */
 .block{
   display: block;
   color:var(--red-color);
-  font-style: italic;
+  /* font-style: italic; */
+  font-weight: bold;
 }
 
 /* Product Page styling */
