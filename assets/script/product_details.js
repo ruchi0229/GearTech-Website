@@ -47,7 +47,7 @@ async function getProducts() {
           document.querySelector(".products-container").innerHTML = products
             .map((product) => {
               if (product.p_id == pid) {
-                if (product.stock_amount > 10) {
+                if (product.stock_amount > 0) {
                   product.stock_amount = "In Stock";
                 } else {
                   product.stock_amount = "Out Of Stock";
@@ -126,44 +126,49 @@ async function getProducts() {
 
           // adding add to cart functionality using the product data
           function addToCart() {
-            let Quantity = 1;
-            // get elements 
+            var Quantity = 1;
+            // get elements
             let subtractProduct = document.querySelector(".sub-product");
             let addProduct = document.querySelector(".add-product");
             var productQuantity = document.querySelector(".product-quantity");
             let addToCart = document.querySelector(".add-to-cart");
-            console.log("first price" + totalPrice);
-            // add totalprice and quantity 
+            // add totalprice and quantity
             addProduct.onclick = function () {
-              if (productQuantity.value == 1){
-                totalPrice =  product_detail.price;
+              if (productQuantity.value == 1) {
+                totalPrice = product_detail.price;
               }
               totalPrice += product_detail.price;
               Quantity++;
               productQuantity.value = Quantity;
-              console.log("add price" + totalPrice);
             };
-             // subtract totalprice and quantity 
+            // subtract totalprice and quantity
             subtractProduct.onclick = function () {
               if (Quantity > 1) {
                 totalPrice -= product_detail.price;
                 Quantity--;
                 productQuantity.value = Quantity;
-                console.log("sub price" + totalPrice);
               }
             };
-            // Save the total price and quantiy from all the products(in progress)
+            // Save the total price and quantiy from all the products
             addToCart.onclick = function () {
               if (productQuantity.value == 1) {
-                totalPrice = product_detail.price;
-                console.log("final price1:" + totalPrice);
-                alert(`Total Amount is: ${totalPrice} 
-                Quantity is ${productQuantity.value} `)
-                
-              } else {
-                console.log("final price2:" + totalPrice);
-                alert(`Total Amount is: ${totalPrice} 
-                Quantity is ${productQuantity.value} `)              }
+                totalPrice = product_detail.price; // initialize the Total price when the quantity is 1
+              }
+              // adding the selected products in local storage
+              let productKey = product_detail.p_id; // generating unique key w.r.t to the product id for storing product in local storage
+              let productArr = [];
+              // getting all selected product details
+              let productJson = {
+                product_id: product_detail.p_id,
+                product_name: product_detail.name,
+                product_description: product_detail.description,
+                product_image: product_detail.url1,
+                product_quantity: productQuantity.value,
+                product_price: totalPrice,
+              };
+              // storing purchased product detail in local storage with totalprice and quantity
+              productArr.push(productJson);
+              localStorage.setItem(productKey, JSON.stringify(productArr));
             };
           }
 
@@ -174,11 +179,8 @@ async function getProducts() {
         //   console.log("Category or Sub Category Id's doesn't Match!");
         // }
       });
-      
     });
-    
   });
-  
 }
 //function calling - get products
 getProducts();
