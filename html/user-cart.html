@@ -343,7 +343,7 @@
                                             class="text-muted">Total</strong>
                                         <h5 class="font-weight-bold">10,300 RS.</h5>
                                     </li>
-                                </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to
+                                </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block" data-toggle="modal" data-target="#myModal">Procceed to
                                     checkout</a>
                             </div>
                         </div>
@@ -371,6 +371,56 @@
             </div>
         </div>
     </main>
+
+    <!-- Checkout Popup-->
+    <div class="modal fade" id="myModal" role="dialog">
+        <!-- modal dialog -->
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- modal header -->
+            <div class="modal-header">
+                <div>
+                    <img src="../assets/images/website-images/logo.png" width="100em">
+                </div>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- end modal header-->
+            <h4 class="card-title">Your order has been placed!</h4>
+            <!-- modal body -->
+            <div class="modal-body">
+                <h4>Checkout Details</h4>
+                <div>
+                    <ul class="list-unstyled mb-4">
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong
+                                class="text-muted">Number of Products </strong><strong>1</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong
+                                class="text-muted">Coupon Discount</strong><strong>0</strong>
+                        </li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong
+                                class="text-muted">Total Bill</strong>
+                            <h5 class="font-weight-bold">10,300 RS.</h5>
+                        </li>
+                    </ul>
+                </div>
+    
+                <h4>Estimated Delivery Time</h4>
+                <div>
+                    <ul class="list-unstyled mb-4">
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong
+                                class="text-muted">Time of your Checkout </strong><strong>1</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong
+                                class="text-muted">Delivered Time</strong><strong>0</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end modal body -->
+          </div>
+          <!-- end modal content-->
+        </div>
+        <!-- end modal dialog-->
+      </div>
+
     <!-- footer conatins 3 columns-->
     <footer>
         <section class="py-3 footer-section">

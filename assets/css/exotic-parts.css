@@ -356,6 +356,18 @@ text-shadow: 1px 2px var(--red-color);
   display: none;
 }
 
+.close {
+  color: var(--red-color);
+  opacity: 0.8;
+}
+
+.card-title{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 12px;
+}
+
 
 /*
    start media quries for different screen sizes
