@@ -125,7 +125,7 @@ function userCartProducts() {
 
                     // update the products data in localStorage with all details and total price
                     localStorage.setItem(productKey, JSON.stringify(productJson));
-                    setTimeout(location.reload(), 1000);
+                    setTimeout(location.reload(), 500);
                 }
             }
         });
