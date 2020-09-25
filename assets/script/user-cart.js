@@ -101,7 +101,7 @@ function userCartProducts() {
                         quantity--;
                         productQuantity.value = quantity;
                         window.localStorage.removeItem(product.product_id);
-                        setTimeout(location.reload(), 1000);
+                        setTimeout(location.reload(), 500);
                     }
                 }
 
@@ -148,6 +148,7 @@ clearLS.addEventListener('click', function(){
   for(i=0; i<100; i++){
     window.localStorage.removeItem(i);
   }
+  setTimeout(location.reload(), 500);
 })
 
 // Delivery Time
