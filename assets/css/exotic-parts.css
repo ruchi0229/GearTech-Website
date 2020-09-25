@@ -356,6 +356,11 @@ text-shadow: 1px 2px var(--red-color);
   transition: 0.5s;
 }
 
+.similar-product-heading{
+  color: var(--blue-color);
+  font-weight: bold;
+}
+
 /* cart page styling */
 .cart-head{
   background-color: var(--light-color);

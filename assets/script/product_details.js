@@ -21,7 +21,7 @@ async function getProducts() {
   // get the id's
   let params = getUrlParams(window.location.href);
   let pid = params.p_id; // product id url
-  
+
   // fetch the data from local json file
   // ***NOTE: Live Server Extension should be
   // installed for fetching local JSON.
@@ -36,7 +36,8 @@ async function getProducts() {
     sub_categories.forEach((sub_cat) => {
       // get product array from each sub category
       let product_categories = sub_cat.products;
-      let similar_products = [];
+      let similar_products = []; //similar products array
+
       product_categories.forEach((product_detail) => {
 
         // console.log("subcat: " + sub_cat.c_id);
@@ -121,23 +122,19 @@ async function getProducts() {
         </div>
     </div> `;
               }
-              else{
-               
-                similar_products.push(product);
-                console.log(similar_products);
-                if(similar_products.length >= 3){
-                    similar_products.length = 3;
-                
-                document.querySelector(".similar-products").innerHTML=similar_products.map((similarProduct => {
-                  
-                  return `<div class="col-3 text-center d-flex flex-column flex-align-around ">
-                  <img src="${similarProduct.url1}" height="300" >
-                  <h5>${similarProduct.name}</h5>
-                  <span class="badge badge-pill badge-danger">${similarProduct.price} RS.</span>
-                  </div>`;
-                }));
-              }
-                console.log(product);
+              else {
+                similar_products.push(product); //add other products into 
+
+                // set first 3 similar products in the product details page
+                document.querySelector(".similar-products").innerHTML = similar_products.map((similarProduct, index) => {
+                  if (index < 3) {
+                    return `<div class="col-4 text-center">
+                              <a href="product_detail.html?p_id=${similarProduct.p_id}"><img src="${similarProduct.url1}" height="300" ></a>
+                              <a href="product_detail.html?p_id=${similarProduct.p_id}"><h6 class="mt-2 similar-product-heading">${similarProduct.name}</h6></a>
+                              <span class="badge badge-pill badge-info py-2 px-3">${similarProduct.price} RS.</span>
+                          </div>`;
+                  }
+                }).join("");
               }
             })
             .join("");
