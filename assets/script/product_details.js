@@ -15,7 +15,7 @@ let getUrlParams = function (url) {
 };
 
 // asynchronous function to get fetch products from JSON
-async function getProducts() {
+async function getProductDetails() {
   let products = true;
 
   // get the id's
@@ -48,10 +48,10 @@ async function getProducts() {
           document.querySelector(".products-container").innerHTML = products
             .map((product) => {
               if (product.p_id == pid) {
-                if (product.stock_amount > 0) {
-                  product.stock_amount = "In Stock";
-                } else {
+                if (product.stock_amount == 0) {
                   product.stock_amount = "Out Of Stock";
+                } else {
+                  product.stock_amount = "In Stock";
                 }
 
                 return `
@@ -128,10 +128,10 @@ async function getProducts() {
                 // set first 3 similar products in the product details page
                 document.querySelector(".similar-products").innerHTML = similar_products.map((similarProduct, index) => {
                   if (index < 3) {
-                    return `<div class="col-4 text-center">
+                    return `<div class="col-md-4 text-center">
                               <a href="product_detail.html?p_id=${similarProduct.p_id}"><img src="${similarProduct.url1}" height="300" ></a>
                               <a href="product_detail.html?p_id=${similarProduct.p_id}"><h6 class="mt-2 similar-product-heading">${similarProduct.name}</h6></a>
-                              <span class="badge badge-pill badge-info py-2 px-3">${similarProduct.price} RS.</span>
+                              <span class="badge badge-pill badge-primary py-2 px-3">${similarProduct.price} RS.</span>
                           </div>`;
                   }
                 }).join("");
@@ -195,4 +195,4 @@ async function getProducts() {
   });
 }
 //function calling - get products
-getProducts();
+getProductDetails();
