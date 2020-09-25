@@ -37,7 +37,6 @@ async function getProducts() {
       // get product array from each sub category
       let product_categories = sub_cat.products;
       product_categories.forEach((product_detail) => {
-        let totalPrice = 0;
 
         // console.log("subcat: " + sub_cat.c_id);
         if (product_detail.p_id == pid) {
@@ -83,7 +82,7 @@ async function getProducts() {
             </div>
 
             <div class="col-md-6 product-det">
-                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / ${sub_cat.name} / ${product_detail.name}</b></p>
+                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / <a href="product.html?id=${category.id}&c_id=${sub_cat.c_id}"> ${sub_cat.name} </a> / ${product_detail.name}</b></p>
                 <hr></p>
                 <h1>${product.name}</h1>
                 <p>Product Code: ${product.p_id}</p>
@@ -127,11 +126,14 @@ async function getProducts() {
           // adding add to cart functionality using the product data
           function addToCart() {
             let quantity = 1;
+            let totalPrice = product_detail.price; //set initial price w.r.t 1 product quantity
+
             // get elements
             let subtractProduct = document.querySelector(".sub-product");
             let addProduct = document.querySelector(".add-product");
             let productQuantity = document.querySelector(".product-quantity");
             let addToCart = document.querySelector(".add-to-cart");
+
             // add totalprice and quantity
             addProduct.onclick = function () {
               totalPrice += product_detail.price;
@@ -148,9 +150,6 @@ async function getProducts() {
             };
             // Save the total price and quantiy from all the products
             addToCart.onclick = function () {
-              if (productQuantity.value == 1) {
-                totalPrice = product_detail.price; // initialize the Total price when the quantity is 1
-              }
               // adding the selected products in local storage
               let productKey = product_detail.p_id; // generating unique key w.r.t to the product id for storing product in local storage
 
@@ -162,7 +161,8 @@ async function getProducts() {
                 product_description: product_detail.description,
                 product_image: product_detail.url1,
                 product_quantity: productQuantity.value,
-                product_price: totalPrice
+                product_price: product_detail.price,
+                total_price: totalPrice
               };
 
               // storing purchased product detail in local storage with totalprice and quantity
