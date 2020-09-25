@@ -1,3 +1,4 @@
+console.log("hey Mahnoor")
 // get the category and sub category id from url
 let getUrlParams = function (url) {
   let params = {};
@@ -46,10 +47,10 @@ async function getProducts() {
           document.querySelector(".products-container").innerHTML = products
             .map((product) => {
               if (product.p_id == pid) {
-                if (product.stock_amount > 0) {
-                  product.stock_amount = "In Stock";
+                if (product.stock_amount == 0) {
+                  product.stock_amount = "Out of Stock";
                 } else {
-                  product.stock_amount = "Out Of Stock";
+                  product.stock_amount = "In Stock";
                 }
 
                 return `
@@ -167,16 +168,57 @@ async function getProducts() {
 
               // storing purchased product detail in local storage with totalprice and quantity
               localStorage.setItem(productKey, JSON.stringify(productJson));
+              setTimeout(location.reload(), 1000);
+
+             
             };
+           
+
           }
 
           // function call - add products into localStorage
           addToCart();
+         
         }
 
       });
     });
   });
+  // location.reload();
+
 }
 //function calling - get products
+
 getProducts();
+function showQuantity() {
+  let cartProducts = []; //adding all localSctorage products into array
+  let totalQuantity = 0; //set initial quantity to 0
+  let hasQuantityShow = false;
+
+   for (let i = 0; i < localStorage.length; i++) {
+    //get product from local storage
+    let product = localStorage.getItem(localStorage.key(i));
+
+    //parse the string into JSON
+     product = JSON.parse(product);
+    //check the data is product not users
+     if (product.product_id !== undefined) {
+      // add the products into cart
+       cartProducts.push(product);
+    //   changing quantity type from string to integer
+      let quantityInNumber = parseInt(product.product_quantity);
+      //adding total quantity of all products
+      totalQuantity += quantityInNumber;
+    }
+  }
+  console.log(totalQuantity)
+  document.querySelector(".total-quantity").innerHTML = cartProducts.map(
+    (product) => {
+      if (!hasQuantityShow) {
+        hasQuantityShow = true;
+        return `<span>${totalQuantity}</span>`;
+      }
+    }
+  ).join('');
+}
+showQuantity();
