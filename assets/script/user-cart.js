@@ -10,17 +10,20 @@ function userCartProducts() {
 
         //get product from local storage
         let product = localStorage.getItem(localStorage.key(i));
-        
+
         //parse the string into JSON
         product = JSON.parse(product);
 
-        // add the products into cart
-        cartProducts.push(product);
+        //check the data is product not users
+        if (product.product_id !== undefined) {
+            // add the products into cart
+            cartProducts.push(product);
+        }
     }
 
     // set the array values in user cart table
     document.querySelector(".user-cart-table").innerHTML = cartProducts.map(product => {
-    
+
         totalBill += product.product_price; //add - all cart products prices
 
         return `<tr>
