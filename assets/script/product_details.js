@@ -37,7 +37,7 @@ async function getProducts() {
       // get product array from each sub category
       let product_categories = sub_cat.products;
       product_categories.forEach((product_detail) => {
-        var totalPrice = 0;
+        let totalPrice = 0;
 
         // console.log("subcat: " + sub_cat.c_id);
         if (product_detail.p_id == pid) {
@@ -126,27 +126,24 @@ async function getProducts() {
 
           // adding add to cart functionality using the product data
           function addToCart() {
-            var Quantity = 1;
+            let quantity = 1;
             // get elements
             let subtractProduct = document.querySelector(".sub-product");
             let addProduct = document.querySelector(".add-product");
-            var productQuantity = document.querySelector(".product-quantity");
+            let productQuantity = document.querySelector(".product-quantity");
             let addToCart = document.querySelector(".add-to-cart");
             // add totalprice and quantity
             addProduct.onclick = function () {
-              if (productQuantity.value == 1) {
-                totalPrice = product_detail.price;
-              }
               totalPrice += product_detail.price;
-              Quantity++;
-              productQuantity.value = Quantity;
+              quantity++;
+              productQuantity.value = quantity;
             };
             // subtract totalprice and quantity
             subtractProduct.onclick = function () {
-              if (Quantity > 1) {
+              if (quantity > 1) {
                 totalPrice -= product_detail.price;
-                Quantity--;
-                productQuantity.value = Quantity;
+                quantity--;
+                productQuantity.value = quantity;
               }
             };
             // Save the total price and quantiy from all the products
@@ -156,28 +153,27 @@ async function getProducts() {
               }
               // adding the selected products in local storage
               let productKey = product_detail.p_id; // generating unique key w.r.t to the product id for storing product in local storage
-              let productArr = [];
+
               // getting all selected product details
               let productJson = {
                 product_id: product_detail.p_id,
+                category_name: category.autoPart,
                 product_name: product_detail.name,
                 product_description: product_detail.description,
                 product_image: product_detail.url1,
                 product_quantity: productQuantity.value,
-                product_price: totalPrice,
+                product_price: totalPrice
               };
+
               // storing purchased product detail in local storage with totalprice and quantity
-              productArr.push(productJson);
-              localStorage.setItem(productKey, JSON.stringify(productArr));
+              localStorage.setItem(productKey, JSON.stringify(productJson));
             };
           }
 
+          // function call - add products into localStorage
           addToCart();
         }
 
-        // else {
-        //   console.log("Category or Sub Category Id's doesn't Match!");
-        // }
       });
     });
   });

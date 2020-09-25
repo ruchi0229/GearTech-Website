@@ -20,20 +20,8 @@ function login() {
 // form validation
 
 
-let users = [
-  {
-    email: "teamdenali4@gmail.com",
-    password: "TEAMdenali1234",
-  },
-  {
-    email: "nimra45@gmail.com",
-    password: "earthisROUND",
-  },
-  {
-    email: "pakistan34@gmail.com",
-    password: "pakistanzindabad",
-  },
-]
+// 
+
 
 
 
@@ -177,7 +165,7 @@ function confirmPasswordFocus() {
 function confirmPasswordKeyup() {
   let password = document.querySelector("#signUp-password");
   let confirmPassword = document.querySelector("#confirm-password");
-  if (confirmPassword.value.length !=  "" && confirmPassword.value == password.value) {
+  if (confirmPassword.value.length != "" && confirmPassword.value == password.value) {
     let confirmPasswordData = document.querySelector("#confirmPaswd-data");
     confirmPasswordData.innerText = "";
     return false;
@@ -205,29 +193,19 @@ function signUpButton() {
   let confirmPassword = document.querySelector("#confirm-password").value;
 
   if (fullnameBlur() && emailBlur() && passwordBlur() && confirmPasswordBlur()) {
-    localStorage.setItem("name",fullName);
-    localStorage.setItem("email",email);
-    localStorage.setItem("password",password);
-    localStorage.setItem("confirmpaswd",confirmPassword);
-    let Emaildata = localStorage.getItem("email");
-    let pswdData =  localStorage.getItem("password");
-    let signUpdata = 
-      {
-        
-        email:Emaildata,
-        password:pswdData
-       
-      };
-      // let signUpKey = Date.now();
-      // localStorage.setItem(signUpKey,JSON.stringify(signUpdata));
-      users.push(signUpdata);
-      localStorage.setItem("users", JSON.stringify(users));
-    // console.log(users.push(signUpdata));
-    console.log(users);
-    console.log(signUpdata);
-    
-    
+    let signUpdata =
+    {
+      name: fullName,
+      email: email,
+      password: password
+
+    };
+    let signUpKey = Date.now();
+   
+    localStorage.setItem(signUpKey, JSON.stringify(signUpdata));
+  
     window.location.assign(login());
+
     clearData();
   }
   else {
@@ -297,10 +275,24 @@ function loginButton() {
   let loginEmail = document.querySelector("#login-email");
   let loginPassword = document.querySelector("#login-paswd");
   let flag = false;
-  for (let i = 0; i < users.length; i++) {
-   
+  let users = [];
 
-    console.log(users[i].email);
+  for (let i = 0; i < localStorage.length; i++) {
+
+    //get usersfrom local storage
+    let user = localStorage.getItem(localStorage.key(i));
+
+    //parse the string into JSON
+    user = JSON.parse(user);
+
+    //check it's user data, not product
+    if (user.email !== undefined) {
+      users.push(user); // add the signed up user into users array
+    }
+
+
+  }
+  for (let i = 0; i < users.length; i++) {
     if (loginEmail.value == users[i].email) {
       if (loginPassword.value == users[i].password) {
         flag = true;
@@ -316,15 +308,9 @@ function loginButton() {
       let loginEmaildata = document.querySelector("#loginemail-data");
       loginEmaildata.innerHTML = "! Incorrect Email";
     }
-  
-     
   }
-  if (flag && loginEmailfocus() && loginPasswordfocus() ) {
+  if (flag && loginEmailfocus() && loginPasswordfocus()) {
     window.open("../index.html");
-    // localStorage.setItem("users", JSON.stringify(users));
-    localStorage.setItem("loginEmail",loginEmail.value);
-    localStorage.setItem("loginPassword", loginPassword.value);
-    
     clearLogin();
   }
   else {
