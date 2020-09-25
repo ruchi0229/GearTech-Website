@@ -55,6 +55,11 @@ function userCartProducts() {
     document.querySelector(".sub-total-bill").innerHTML = totalBill + " RS.";
     document.querySelector(".total-bill").innerHTML = totalBill + " RS.";
 
+    //*** set the sub-total and total bill in checkout popup ***
+    document.querySelector(".checkout-total-bill").innerHTML = totalBill + " RS.";
+    let discountBill = totalBill - ((totalBill*10)/100);    // calculating discount
+    document.querySelector(".checkout-discount-bill").innerHTML = discountBill + " RS.";
+
 
     /********************* edit cart functionality ********************/
 
@@ -104,8 +109,8 @@ function userCartProducts() {
                     totalPrice = quantity * product.product_price;
 
                     /**
-                     * product uniqe key similar to added product
-                     * for updaing the product details in localStorage
+                     * product unique key similar to added product
+                     * for updating the product details in localStorage
                      **/
                     let productKey = product.product_id;
 
@@ -137,6 +142,39 @@ userCartProducts();
 
 
 
+// Checkout button removing products from localstorage
+let clearLS = document.getElementById("checkoutbtn");
+clearLS.addEventListener('click', function(){
+  for(i=0; i<100; i++){
+    window.localStorage.removeItem(i);
+  }
+})
+
+// Delivery Time
+let checkoutbtn = document.getElementById("checkoutbtn");
+let checkouttime = document.getElementById("checkout-time");
+let deliverytime = document.getElementById("delivery-time");
+
+checkoutbtn.addEventListener('click', () => {
+  let today = new Date();
+  let tomorrow = new Date();
+
+  let month = today.getMonth() + 1;
+  let year = today.getFullYear();
+  let date = today.getDate();
+
+  let currentDate = `${date}/${month}/${year}`; // calculating today
+  let tomorrowDate = `${date+1}/${month}/${year}`;  //// calculating tomorrow
+
+  let hours = today.getHours();
+  let minutes = today.getMinutes();
+  let seconds = today.getSeconds();
+
+  let currentTime = `${hours}:${minutes}:${seconds}`;   // calculating current time
+
+  checkouttime.innerText = currentDate+' '+currentTime;
+  deliverytime.innerText = tomorrowDate+' '+currentTime;
+})
 
 
 
