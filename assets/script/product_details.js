@@ -21,7 +21,7 @@ async function getProducts() {
   // get the id's
   let params = getUrlParams(window.location.href);
   let pid = params.p_id; // product id url
-
+  
   // fetch the data from local json file
   // ***NOTE: Live Server Extension should be
   // installed for fetching local JSON.
@@ -36,6 +36,7 @@ async function getProducts() {
     sub_categories.forEach((sub_cat) => {
       // get product array from each sub category
       let product_categories = sub_cat.products;
+      let similar_products = [];
       product_categories.forEach((product_detail) => {
 
         // console.log("subcat: " + sub_cat.c_id);
@@ -119,6 +120,24 @@ async function getProducts() {
             </div>
         </div>
     </div> `;
+              }
+              else{
+               
+                similar_products.push(product);
+                console.log(similar_products);
+                if(similar_products.length >= 3){
+                    similar_products.length = 3;
+                
+                document.querySelector(".similar-products").innerHTML=similar_products.map((similarProduct => {
+                  
+                  return `<div class="col-3 text-center d-flex flex-column flex-align-around ">
+                  <img src="${similarProduct.url1}" height="300" >
+                  <h5>${similarProduct.name}</h5>
+                  <span class="badge badge-pill badge-danger">${similarProduct.price} RS.</span>
+                  </div>`;
+                }));
+              }
+                console.log(product);
               }
             })
             .join("");
