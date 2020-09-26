@@ -339,9 +339,7 @@
                                             class="text-muted">Total</strong>
                                         <h5 class="font-weight-bold total-bill">10,300 RS.</h5>
                                     </li>
-                                </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block" data-toggle="modal"
-                                    data-target="#myModal">Procceed to
-                                    checkout</a>
+                                </ul><a href="#" id="checkoutbtn" class="btn btn-dark rounded-pill py-2 btn-block" data-toggle="modal" data-target="#myModal">Proceed to checkout</a>
                             </div>
                         </div>
 
@@ -384,20 +382,19 @@
                 </div>
                 <!-- end modal header-->
                 <h4 class="card-title">Your order has been placed!</h4>
-
-                <!-- checout modal body -->
+                <!-- modal body -->
                 <div class="modal-body">
                     <h4>Checkout Details</h4>
                     <div>
                         <ul class="list-unstyled mb-4">
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong
-                                    class="text-muted">Number of Products </strong><strong>1</strong></li>
+                                    class="text-muted">Number of Products </strong><strong class="checkout-quantity">1</strong></li>
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong
-                                    class="text-muted">Coupon Discount</strong><strong>0</strong>
+                                    class="text-muted">Shipping and handling
+                                </strong><strong>FREE</strong>
                             </li>
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong
-                                    class="text-muted">Total Bill</strong>
-                                <h5 class="font-weight-bold">10,300 RS.</h5>
+                                    class="text-muted">Total Price</strong><strong class="checkout-total-bill">0</strong>
                             </li>
                         </ul>
                     </div>
@@ -405,10 +402,14 @@
                     <h4>Estimated Delivery Time</h4>
                     <div>
                         <ul class="list-unstyled mb-4">
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong
-                                    class="text-muted">Time of your Checkout </strong><strong>1</strong></li>
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong
-                                    class="text-muted">Delivered Time</strong><strong>0</strong>
+                            <li class="d-flex justify-content-between py-3 border-bottom">
+                                <strong class="text-muted">Checkout Time </strong><strong id="checkout-time">1</strong>
+                            </li>
+                            <li class="d-flex justify-content-between py-3 border-bottom">
+                                <strong class="text-muted">Delivery Time</strong><strong id="delivery-time">0</strong>
+                            </li>
+                            <li class="d-flex justify-content-between py-3 border-bottom">
+                                <strong class="text-muted">Price after late delivery</strong><strong class="checkout-discount-bill">0</strong>
                             </li>
                         </ul>
                     </div>
