@@ -26,17 +26,21 @@ body {
 }
 
 /* second navbar */
+.logo-white{
+  vertical-align: middle;
+}
 .dropdown-item {
   font-size: 0.8rem;
 }
 .category-navbar ul {
-  background-color: var(--peach-color);
+  background-color: var(--red-color);
   border: 0.21em solid var(--red-color);
   font-family: "Roboto Slab", serif;
 }
 .category-navbar ul a,
 .category-navbar ul li {
-  color: var(--blue-color);
+  color: var(--red-color);
+
 }
 .category-navbar ul:first-child li span {
   font-size: 1.2rem;
@@ -71,12 +75,12 @@ body {
 /* for all h1 headings in body main headings */
 h1 {
   font-family: "Roboto Slab", serif;
-  color: var(--blue-color);
+  color: var(--red-color);
 }
 /* sub category heading */
 h2 {
-  color: var(--red-color);
-  margin-left: 5%;
+  color: var(--blue-color);
+  text-align: center;
 }
 
 /* discount heading on slider */
@@ -94,7 +98,7 @@ h2 {
 /* giving bg-color to the each category bt targeting their div */
 .all-category > div:nth-child(1),
 .all-category > div:nth-child(3) {
-  background-color: var(--blue-color);
+  background-color: var(--peach-color);
 }
 .all-category > div:nth-child(2),
 .all-category > div:nth-child(4) {
@@ -108,25 +112,34 @@ h2 {
 }
 /* product cards */
 .card-title {
-  color: var(--blue-color);
+  color: var(--red-color);
   font-weight: bold;
 }
 .card:hover {
-  box-shadow: 3px 3px 13px #bdbdbd;
+  /* box-shadow: 3px 3px 13px #bdbdbd; */
+  box-shadow: 3px 3px 13px var(--red-color);
+
 }
 /* section that contains footer content */
 .footer-section {
   font-size: 0.8rem;
-  background-color: var(--light-color);
-  color: var(--blue-color);
+  background-color: var(--blue-color);
+  color: var(--light-color);
 }
 /* anchor tags in footer */
+.list-unstyled li span svg{
+  color: var(--peach-color);
+}
 footer a {
-  color: var(--blue-color);
+  color: var(--light-color);
+}
+footer a:hover {
+  color: var(--red-color);
 }
 .copyright-section {
   background-color: var(--red-color);
   color: var(--light-color);
+  text-align: center;
 }
 
 /* form page Styling */
@@ -142,7 +155,6 @@ footer a {
   margin: 2% auto;
   position: relative;
   padding: 5px;
-  background-color: var(--light-color);
   overflow: hidden;
   background-image: linear-gradient(
     45deg,
@@ -180,7 +192,7 @@ footer a {
   height: 110%;
   transition: 0.5s;
   border-radius: 30px;
-  background: var(--blue-color);
+  background: var(--red-color);
 }
 
 /* styling of form  */
@@ -205,23 +217,15 @@ footer a {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--blue-color);
+  border-bottom: 1px solid var(--red-color);
 }
 .form-icon > i {
   height: 0px;
 }
-/* .input-email{
-  position: absolute;
-  top: 18px; 
-}
-.input-pswd{
-  position: absolute;
-  top: 83px; 
-} */
 .submit-btn {
   border: none;
   padding: 10px 30px;
-  background: var(--blue-color);
+  background: var(--red-color);
   width: 100%;
   display: block;
   transition: 0.5s;
@@ -239,29 +243,11 @@ footer a {
   bottom: 68px;
   position: absolute;
 }
-/* styling for form icons  */
-/* .signup-user{
-  position: absolute;
-  top: 18px;
-}
-.signup-email{
-  position: absolute;
-  top: 66px;
-    
-}
-.signup-pswd{
-  position: absolute;
-  top: 110px;
-}
-.confirm-pswd{
-  position: absolute;
-  top: 155px;
-} */
+
 /* styling of error show in js  */
 .block {
   display: block;
   color: var(--red-color);
-  /* font-style: italic; */
   font-weight: bold;
 }
 
@@ -291,13 +277,13 @@ footer a {
   width: 32px;
   height: 32px;
   font-weight: bolder;
-  background: var(--peach-color);
+  background: var(--blue-color);
   padding: 6px 5px 6px 5px;
-  border: 1px solid var(--red-color);
+  border: 1px solid var(--blue-color);
   border-radius: 2px;
   display: inline-block;
   text-align: center;
-  color: var(--blue-color);
+  color: var(--light-color);
 }
 
 .cart {
@@ -314,7 +300,9 @@ footer a {
   font-size: 16px;
   font-weight: bold;
 }
-
+.product-name{
+  color: var(--blue-color);
+}
 /* Product Page */
 .products-row {
   margin-top: 30px;
@@ -358,8 +346,8 @@ footer a {
 
 /* cart page styling */
 .cart-head {
-  background-color: var(--light-color);
-  color: var(--blue-color);
+  background-color: var(--lightBlue-color);
+  color: var(--light-color);
 }
 
 .price-sm {
@@ -383,7 +371,7 @@ footer a {
   left: 49px;
   bottom: 8px;
   color: white;
-  background-color: #f57224;
+  background-color: var(--red-color);
   font-size: 0.8rem;
   padding: 4px 5px;
   border-radius: 20px;
@@ -391,6 +379,11 @@ footer a {
 /* child span store quantity */
 .total-quantity span {
   padding: 2px 4px
+}
+/* checkout button styling */
+#checkoutbtn,#button-addon3{
+  background-color: var(--red-color);
+  color: var(--light-color);
 }
 
 /*

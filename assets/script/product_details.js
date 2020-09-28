@@ -85,7 +85,7 @@ async function getProductDetails() {
             </div>
 
             <div class="col-md-6 product-det">
-                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / <a href="product.html?id=${category.id}&c_id=${sub_cat.c_id}"> ${sub_cat.name} </a> / ${product_detail.name}</b></p>
+                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / <a href="product.html?id=${category.id}&c_id=${sub_cat.c_id}"> ${sub_cat.name} </a> / ${product_detail.name} </b></p>
                 <hr></p>
                 <h1>${product.name}</h1>
                 <p>Product Code: ${product.p_id}</p>
@@ -130,7 +130,7 @@ async function getProductDetails() {
                     return `<div class="col-md-4 text-center">
                               <a href="product_detail.html?p_id=${similarProduct.p_id}"><img src="${similarProduct.url1}" height="300" ></a>
                               <a href="product_detail.html?p_id=${similarProduct.p_id}"><h6 class="mt-2 similar-product-heading">${similarProduct.name}</h6></a>
-                              <span class="badge badge-pill badge-primary py-2 px-3">${similarProduct.price} RS.</span>
+                              <span class="badge badge-pill badge-danger text-white py-2 px-3">${similarProduct.price} RS.</span>
                           </div>`;
                   }
                 }).join("");
