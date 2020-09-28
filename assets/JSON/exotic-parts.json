@@ -45,7 +45,7 @@
             "description": " The bronze is excellent, almost a satin/matte finish to it with a really nice subtle sparkle when in the sunlight.",
             "price": 4000,
             "stock amount": 30,
-            "url1": "../assets/images/json-url/1/Brounze-Wheel-Cup-1.webp",
+            "url1": "../assets/images/json-url/1/Brounze-Wheel-Cup-1.jpg",
             "url2": "../assets/images/json-url/1/Brounze-Wheel-Cup-2.jpg"
           },
           {
@@ -109,7 +109,7 @@
             "price": 1200,
             "stock amount": 40,
             "url1": "../assets/images/json-url/1/car-aluminium-nuts-1.jpeg",
-            "url2": "../assets/images/json-url/1/car-aluminium-nuts-2.webp"
+            "url2": "../assets/images/json-url/1/car-aluminium-nuts-2.jpeg"
           }
         ]
       },
@@ -224,8 +224,8 @@
             "description": "Suzuki Mehran Genuine Door Handle RLH. For Suzuki Mehran 1988-2012",
             "price": 800,
             "stock_amount": 30,
-            "url1": "../assets/images/json-url/2/suzuki-door-handle-1.webp",
-            "url2": "../assets/images/json-url/2/suzuki-door-handle-2.webp"
+            "url1": "../assets/images/json-url/2/suzuki-door-handle-1.jpg",
+            "url2": "../assets/images/json-url/2/suzuki-door-handle-2.jpg"
           },
           {
             "p_id": 20,
