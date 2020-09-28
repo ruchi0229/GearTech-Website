@@ -102,8 +102,6 @@ async function getProductDetails() {
                     <button class="add-product">+</button>
                     <button type="button" class="btn btn-default cart add-to-cart">Add to Cart</button>
                 </div>
-
-                <p class="wishlist"><a href="#"><b>Add to Wishlist</b></a></p>
                 <hr>
             </div>
             </div>

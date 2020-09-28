@@ -182,11 +182,7 @@ footer a {
   border-radius: 30px;
   background: var(--blue-color);
 }
-/* styling for icons image  */
-.icon-image {
-  margin: 30px auto;
-  text-align: center;
-}
+
 /* styling of form  */
 .form-container form {
   top: 140px;
@@ -308,15 +304,7 @@ footer a {
   font-size: 15px;
   margin-left: 20px;
 }
-.wishlist {
-  margin-top: 10px;
-}
-.wishlist a {
-  color: var(--red-color);
-}
-.wishlist a:hover {
-  color: var(--peach-color);
-}
+
 .title {
   font-weight: bold;
   color: var(--blue-color);
