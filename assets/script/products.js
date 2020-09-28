@@ -59,9 +59,9 @@ async function getProducts() {
                     return `
                         <div class="col-md-4">
                             <div class="product-top">
-                               <a href="../html/product_detail.html?p_id=${product.p_id}"><img src=${product.url1} height=300></a>
+                               <a href="product_detail.html?p_id=${product.p_id}"><img src=${product.url1} height=300></a>
                                <div class="overlay">
-                                   <button type="button" class="btn btn-secondary" title="Quick View"><i class="far fa-eye"></i></button>
+                                   <a href="product_detail.html?p_id=${product.p_id}" class="btn btn-secondary" title="Quick View"><i class="far fa-eye"></i></a>
                                    <button type="button" class="btn btn-secondary" title="Add to Cart"><i class="fas fa-cart-plus"></i></button>
                                 </div>    
                             </div>
