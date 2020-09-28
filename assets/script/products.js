@@ -49,7 +49,7 @@ async function getProducts() {
                     if (!hasNavigationBar) {
                         hasNavigationBar = true;
                         return `
-                              <p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / ${sub_cat.name}</b></p>
+                              <p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart} </a> / <a href="#">  ${sub_cat.name} </a></b></p>
                               <hr>`;
                     }
                 }).join('');
@@ -66,7 +66,7 @@ async function getProducts() {
                                 </div>    
                             </div>
                             <div class="product-bottom text-center">
-                                 <h4>${product.name}</h4>
+                                 <h4 class="product-name">${product.name}</h4>
                                  <p class="sec-product-price">${product.price} RS.</p>
                             </div>
                         </div>`;
