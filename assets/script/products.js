@@ -18,7 +18,6 @@ async function getProducts() {
 
     let products;
     let hasNavigationBar = false;
-
     // get the id's
     let params = getUrlParams(window.location.href);
     let id = params.id; // main category id 
