@@ -1,3 +1,8 @@
+// Pre Loader
+window.onload = function(){
+  document.getElementById('loader').style.display = 'none';
+}
+
 // get the category and sub category id from url
 let getUrlParamsProductId = function (url) {
   let params = {};

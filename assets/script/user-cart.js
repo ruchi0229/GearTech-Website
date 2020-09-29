@@ -1,3 +1,8 @@
+// Pre Loader
+window.onload = function(){
+  document.getElementById('loader').style.display = 'none';
+}
+
 /***
  set products in user cart page from localStorage
 ***/
