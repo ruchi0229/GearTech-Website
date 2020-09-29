@@ -19,7 +19,7 @@ async function getProductDetails() {
   let products = true;
 
   // get the id's
-  let params =  getUrlParamsProductId(window.location.href);
+  let params = getUrlParamsProductId(window.location.href);
   let pid = params.p_id; // product id url
 
   // fetch the data from local json file
@@ -97,7 +97,7 @@ async function getProductDetails() {
                 <div>
                     <label>Quantity:</label>
                     <button class="sub-product">-</button>
-                    <input type="number" name="quantity" value="1" disabled class="product-quantity">
+                    <input type="text" name="quantity" value="1" class="cart-edit product-quantity" disabled>
                     <button class="add-product">+</button>
                     <button type="button" class="btn btn-default cart add-to-cart">Add to Cart</button>
                 </div>
@@ -227,26 +227,28 @@ async function getProductDetails() {
  */
 function showQuantity() {
   let userCart = document.getElementById("user-cart");
-  
+
   let totalQuantity = 0; //set initial quantity to 0
 
   // get all products ftom localStorage
   let cartCurrentProducts = JSON.parse(localStorage.getItem("products"));
 
-  // loop through adding all products quantity
-  cartCurrentProducts.forEach(cartCurrentProduct => {
-    totalQuantity += cartCurrentProduct.product_quantity;
-  });
+  if (cartCurrentProducts !== null) {
+    // loop through adding all products quantity
+    cartCurrentProducts.forEach(cartCurrentProduct => {
+      totalQuantity += cartCurrentProduct.product_quantity;
+    });
+  }
 
-  userCart.onclick = function(){
-    if(totalQuantity === 0){
+  userCart.onclick = function () {
+    if (totalQuantity === 0) {
       swal("Your cart is currently empty!", "Please, select the item to see cart page.", "info");
     }
-    else{
+    else {
       userCart.href = "user-cart.html";
     }
   };
-  
+
   // setting the total quantity on UI - cart icon
   document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
 

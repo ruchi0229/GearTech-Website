@@ -201,9 +201,9 @@ function signUpButton() {
 
     };
     let signUpKey = Date.now();
-   
+
     localStorage.setItem(signUpKey, JSON.stringify(signUpdata));
-  
+
     window.location.assign(login());
 
     clearData();

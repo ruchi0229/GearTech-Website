@@ -62,7 +62,6 @@ async function getProducts() {
                                <a href="product_detail.html?p_id=${product.p_id}"><img src=${product.url1} height=300></a>
                                <div class="overlay">
                                    <a href="product_detail.html?p_id=${product.p_id}" class="btn btn-secondary" title="Quick View"><i class="far fa-eye"></i></a>
-                                   <button type="button" class="btn btn-secondary" title="Add to Cart"><i class="fas fa-cart-plus"></i></button>
                                 </div>    
                             </div>
                             <div class="product-bottom text-center">
@@ -94,11 +93,12 @@ function showQuantity() {
     // get all products ftom localStorage
     let cartCurrentProducts = JSON.parse(localStorage.getItem("products"));
 
-    // loop through adding all products quantity
-    cartCurrentProducts.forEach(cartCurrentProduct => {
-        totalQuantity += cartCurrentProduct.product_quantity;
-    });
-
+    if (cartCurrentProducts !== null) {
+        // loop through adding all products quantity
+        cartCurrentProducts.forEach(cartCurrentProduct => {
+            totalQuantity += cartCurrentProduct.product_quantity;
+        });
+    }
     userCart.onclick = function () {
         if (totalQuantity === 0) {
             swal("Your cart is currently empty!", "Please, select the item to see cart page.", "info");

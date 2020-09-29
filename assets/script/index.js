@@ -9,23 +9,24 @@ function showQuantity() {
   // get all products ftom localStorage
   let cartCurrentProducts = JSON.parse(localStorage.getItem("products"));
 
-  // loop through adding all products quantity
-  cartCurrentProducts.forEach(cartCurrentProduct => {
-    totalQuantity += cartCurrentProduct.product_quantity;
-  });
+  if (cartCurrentProducts !== null) {
+    // loop through adding all products quantity
+    cartCurrentProducts.forEach(cartCurrentProduct => {
+      totalQuantity += cartCurrentProduct.product_quantity;
+    });
+  }
 
-  userCart.onclick = function(){
-    if(totalQuantity === 0){
+  userCart.onclick = function () {
+    if (totalQuantity === 0) {
       swal("Your cart is currently empty!", "Please, select the item to see cart page.", "info");
     }
-    else{
+    else {
       userCart.href = "html/user-cart.html";
     }
   };
-  
+
   // setting the total quantity on UI - cart icon
   document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
-
 }
 
 // set the quantity values on cart icon

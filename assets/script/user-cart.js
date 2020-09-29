@@ -8,16 +8,36 @@ function showCartProducts() {
   let totalQuantity = 0;
 
   cartProducts = JSON.parse(localStorage.getItem("products"));
-  cartProducts.sort((a, b) => {
-    return a.product_id - b.product_id;
-  });
 
-  // set the array values in user cart table
-  document.querySelector(".user-cart-table").innerHTML = cartProducts.map(product => {
+  /* sort cart items, so order 
+     should always be same, when 
+     edit / delete the items from cart
+  */
+  if (cartProducts !== null && cartProducts.length > 0) {
+    cartProducts.sort((a, b) => {
+      return a.product_id - b.product_id;
+    });
 
-    totalBill += product.total_price; //add - all cart products prices
-    totalQuantity += product.product_quantity; //sum of all products quantity
-    return `<tr>
+    // set the table head when no products are in cart
+    document.querySelector(".user-cart-head").innerHTML =
+      `<tr>
+         <th scope="col" class="border-0">
+            <div class="p-2 px-3 text-uppercase">Product</div>
+         </th>
+         <th scope="col" class="border-0 price">
+            <div class="py-2 text-uppercase">Price</div>
+         </th>
+         <th scope="col" class="border-0">
+           <div class="py-2 text-uppercase">Quantity</div>
+         </th>
+       </tr>`;
+
+    // set the array values in user cart table
+    document.querySelector(".user-cart-table").innerHTML = cartProducts.map(product => {
+
+      totalBill += product.total_price; //add - all cart products prices
+      totalQuantity += product.product_quantity; //sum of all products quantity
+      return `<tr>
                    <th scope="row" class="border-0">
                         <div class="p-2">
                             <img src="${product.product_image}" alt=""
@@ -35,37 +55,52 @@ function showCartProducts() {
                     <td class="border-0 align-middle">
                         <div class="d-flex flex-lg-row">
                             <input type="button" class="sub-product edit-product" id="sub-${product.product_id}" value="-">
-                            <input class="cart-edit product-quantity" type="text" name="quantity" id="quantity-${product.product_id}" value="${product.product_quantity}">
+                            <input class="cart-edit product-quantity" type="text" name="quantity" id="quantity-${product.product_id}" value="${product.product_quantity}" disabled>
                             <input type="button" class="add-product edit-product" id="add-${product.product_id}" value="+">
                         </div>
                     </td>
                 </tr>`;
-  }).join('');
+    }).join('');
 
-  //*** set the sub-total and total bill in order summary ***
-  document.querySelector(".sub-total-bill").innerHTML = totalBill + " RS.";
-  document.querySelector(".total-bill").innerHTML = totalBill + " RS.";
+    //*** set the sub-total and total bill in order summary ***
+    document.querySelector(".sub-total-bill").innerHTML = totalBill + " RS.";
+    document.querySelector(".total-bill").innerHTML = totalBill + " RS.";
 
-  //*** set the sub-total and total bill in checkout popup ***
-  document.querySelector(".checkout-quantity").innerHTML = totalQuantity;
-  document.querySelector(".checkout-total-bill").innerHTML = totalBill + " RS.";
-  let discountBill = totalBill - ((totalBill * 10) / 100);    // calculating discount
-  document.querySelector(".checkout-discount-bill").innerHTML = discountBill + " RS.";
+    //*** set the sub-total and total bill in checkout popup ***
+    document.querySelector(".checkout-quantity").innerHTML = totalQuantity;
+    document.querySelector(".checkout-total-bill").innerHTML = totalBill + " RS.";
+    let discountBill = totalBill - ((totalBill * 10) / 100);    // calculating discount
+    document.querySelector(".checkout-discount-bill").innerHTML = discountBill + " RS.";
 
-  // setting the total quantity on UI - cart icon
-  document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
+    // setting the total quantity on UI - cart icon
+    document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
 
 
-  /********************* edit cart functionality ********************/
+    /********************* edit cart functionality ********************/
 
-  // get all button of table
-  let editProducts = document.querySelectorAll(".edit-product");
+    // get all button of table
+    let editProducts = document.querySelectorAll(".edit-product");
 
-  for (let i = 0; i < editProducts.length; i++) {
-    //for identify the event listner and call updateCart function
-    editProducts[i].addEventListener('click', updateCart, false);
-  };
+    for (let i = 0; i < editProducts.length; i++) {
+      //for identify the event listner and call updateCart function
+      editProducts[i].addEventListener('click', updateCart, false);
+    }
+  }
+  else {
+    // remove the order summary and personal data form wen no item at cart
+    document.querySelector(".order-details").style.display = "none";
 
+    // show cart empty msg with return o back option
+    document.querySelector(".user-cart-table").innerHTML =
+      `<div class="col-lg-12 d-flex justify-content-center">
+          <div>
+            <h5 class="my-2">Your cart is currently empty.</h5>
+            <div class="d-flex justify-content-center">
+                <a href="../index.html#shop-by-category" class="btn d-inline-block align-middle mt-2">RETURN TO SHOP</a>     
+            </div>
+          </div>
+       </div>`;
+  }
 }
 
 /**
@@ -90,30 +125,34 @@ function updateCart() {
     if (product.product_id == id) {
 
       if (buttonType === "add") { //check button is for adding products
-        console.log("add quantity ---- " + quantity);
         quantity++;
-        console.log("add quantity ---- " + quantity);
         productQuantity.value = quantity;
       }
       else if (buttonType === "sub") { //check button is for subtracting products
         if (quantity > 1) { //subbract if products are >1
           quantity--;
-          console.log("sub quantity ---- " + quantity);
           productQuantity.value = quantity;
         }
         else { //else remove the product from cart and localStorage
           quantity--;
+
+          // delete the object from current cart items when 0 quantity
           cartCurrentProducts.splice(index, 1);
+
+          // set the updated products in local Stprage
           localStorage.setItem('products', JSON.stringify(cartCurrentProducts));
 
+          // reflect the cart product changes in cart page
           showCartProducts();
 
+          // enforce to remove the header of cart products table
+          document.querySelector(".user-cart-head").style.display = "none";
         }
       }
 
-      if (quantity >= 1) { //update the localStorage if quantity id >=1
-        totalPrice = quantity * product.product_price;
+      if (quantity >= 1) { //update the localStorage if quantity >=1
 
+        totalPrice = quantity * product.product_price; //calculate total price
 
         let cartItems = []; // array of selected products by user
 
@@ -128,27 +167,28 @@ function updateCart() {
           total_price: totalPrice
         };
 
+        // get all current products from cart 
         let previousProducts = JSON.parse(localStorage.getItem("products"));
+
         previousProducts.forEach(preProduct => {
 
           /*
-            if selected product have aleady been addedd 
-            that should be override with the new one.
+            add the items which are not
+            edited in cart
           */
           if (preProduct.product_id !== productJson.product_id) {
             cartItems.push(preProduct);
           }
         });
 
-        // adding new selected products
+        // add the edited cart item
         cartItems.push(productJson);
 
-        // storing purchased product detail in local storage with totalprice and quantity
+        // storing product detail in local storage with totalprice and quantity
         localStorage.setItem("products", JSON.stringify(cartItems));
 
-        // function call to set products on user cart page
+        // reflect the cart product changes in cart page
         showCartProducts();
-
       }
     }
   });
@@ -157,16 +197,14 @@ function updateCart() {
 // function call to set products on user cart page
 showCartProducts();
 
-
 /******************* CHECKOUT FUNCTIONLITY ******************/
 
-// Checkout button removing products from localstorage
-let clearLS = document.getElementById("checkoutbtn");
+// Done button inside Checkout removing products from localstorage
+let clearLS = document.getElementById("done-btn");
+
 clearLS.addEventListener('click', function () {
-  for (i = 0; i < 100; i++) {
-    window.localStorage.removeItem(i);
-    setTimeout(location.reload(), 200000);
-  }
+  // remove the products from localStorage
+  localStorage.removeItem("products");
 });
 
 // Delivery Time
@@ -176,7 +214,6 @@ let deliverytime = document.getElementById("delivery-time");
 
 checkoutbtn.addEventListener('click', () => {
   let today = new Date();
-  let tomorrow = new Date();
 
   let month = today.getMonth() + 1;
   let year = today.getFullYear();
