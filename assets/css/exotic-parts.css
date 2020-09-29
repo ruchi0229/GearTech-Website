@@ -135,6 +135,15 @@ footer a {
 #form-bg {
   background-color: var(--blue-color);
 }
+#login {
+  left: "50px";
+}
+#signup {
+  left: -450px;
+}
+#butn-div {
+  left: "0px";
+}
 /* form styling    */
 .wrapper {
   width: 380px;
@@ -189,20 +198,19 @@ footer a {
 }
 /* styling of form  */
 .form-container form {
-  top: 140px;
+  top: 100px;
   position: absolute;
   width: 280px;
   transition: 0.5s;
+  left: 50px;
 }
 /* input field  */
 .input-field {
-  /* position: relative; */
   width: 90%;
   padding: 5px 10px;
   border: none;
   background-color: transparent;
   outline: none;
-  /* border-bottom: 1px solid var(--blue-color); */
   margin: 20px auto 5px auto;
 }
 .form-icon {
@@ -214,14 +222,6 @@ footer a {
 .form-icon > i {
   height: 0px;
 }
-/* .input-email{
-  position: absolute;
-  top: 18px; 
-}
-.input-pswd{
-  position: absolute;
-  top: 83px; 
-} */
 .submit-btn {
   border: none;
   padding: 10px 30px;
@@ -243,29 +243,23 @@ footer a {
   bottom: 68px;
   position: absolute;
 }
-/* styling for form icons  */
-/* .signup-user{
-  position: absolute;
-  top: 18px;
-}
-.signup-email{
-  position: absolute;
-  top: 66px;
-    
-}
-.signup-pswd{
-  position: absolute;
-  top: 110px;
-}
-.confirm-pswd{
-  position: absolute;
-  top: 155px;
-} */
+
 /* styling of error show in js  */
 .block {
   display: block;
   color: var(--red-color);
-  /* font-style: italic; */
+}
+/* small tag contains error statements */
+#name-data,
+#email-data,
+#paswd-data,
+#confirmPaswd-data,
+#loginemail-data,
+#loginpaswd-data {
+  opacity: 0;
+}
+.fa-exclamation-circle span {
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
 
@@ -363,7 +357,7 @@ footer a {
   transition: 0.5s;
 }
 
-.similar-product-heading{
+.similar-product-heading {
   color: var(--blue-color);
   font-weight: bold;
 }
@@ -402,7 +396,7 @@ footer a {
 }
 /* child span store quantity */
 .total-quantity span {
-  padding: 2px 4px
+  padding: 2px 4px;
 }
 
 /*
@@ -428,6 +422,18 @@ footer a {
   .main-heading {
     font-size: 1.75rem;
   }
+}
+/* zoom effect on categories images */
+#zoom-img{
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear; 
+}
+#zoom-img:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 @media screen and (max-width: 800px) {
