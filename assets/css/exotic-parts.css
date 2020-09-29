@@ -424,6 +424,15 @@ footer a:hover {
   background-color: var(--red-color);
 }
 
+.contact-form .input-block{
+  margin-top: 12px;
+}
+
+.input-block label{
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
 /*
    start media quries for different screen sizes
 */
