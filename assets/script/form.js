@@ -192,17 +192,40 @@ function signUpButton() {
   let password = document.querySelector("#signUp-password").value;
   let confirmPassword = document.querySelector("#confirm-password").value;
 
+  let users = []; //all users array
+
   if (fullnameBlur() && emailBlur() && passwordBlur() && confirmPasswordBlur()) {
-    let signUpdata =
+    // signup user data
+    let user =
     {
       name: fullName,
       email: email,
       password: password
 
     };
-    let signUpKey = Date.now();
 
-    localStorage.setItem(signUpKey, JSON.stringify(signUpdata));
+    /*
+     * if users array is not setted then 
+     * add the previous users in users array, 
+     * after that add the new one
+     */
+    if (localStorage.getItem("users") !== null) {
+      // array of users from localStorage
+      let previousUsers = JSON.parse(localStorage.getItem("users"));
+
+      previousUsers.forEach(preUser => {
+        /* if email already exist then 
+        replace the data with new one */
+        if (preUser.email !== user.email) {
+          users.push(preUser);
+        }
+      });
+    }
+
+    users.push(user); // add the current user
+
+    //set updated users into local storage
+    localStorage.setItem("users", JSON.stringify(users));
 
     window.location.assign(login());
 
@@ -275,23 +298,13 @@ function loginButton() {
   let loginEmail = document.querySelector("#login-email");
   let loginPassword = document.querySelector("#login-paswd");
   let flag = false;
-  let users = [];
 
-  for (let i = 0; i < localStorage.length; i++) {
+  /*
+   * get the users array from local storage
+   * and parse the string into JSON
+  */
+  let users = JSON.parse(localStorage.getItem("users"));
 
-    //get usersfrom local storage
-    let user = localStorage.getItem(localStorage.key(i));
-
-    //parse the string into JSON
-    user = JSON.parse(user);
-
-    //check it's user data, not product
-    if (user.email !== undefined) {
-      users.push(user); // add the signed up user into users array
-    }
-
-
-  }
   for (let i = 0; i < users.length; i++) {
     if (loginEmail.value == users[i].email) {
       if (loginPassword.value == users[i].password) {
