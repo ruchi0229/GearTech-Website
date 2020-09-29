@@ -150,9 +150,11 @@ function updateCart() {
         }
       }
 
-      if (quantity >= 1) { //update the localStorage if quantity >=1
+      //update the localStorage if quantity >=1
+      if (quantity >= 1) { 
 
-        totalPrice = quantity * product.product_price; //calculate total price
+        //calculate total price
+        totalPrice = quantity * product.product_price; 
 
         let cartItems = []; // array of selected products by user
 
