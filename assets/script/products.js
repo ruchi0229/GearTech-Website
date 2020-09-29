@@ -90,8 +90,6 @@ async function getProducts() {
 /*
  * function for setting the product quantity on cart icon
  */
-
-
 function showQuantity() {
 
     let userCart = document.getElementById("user-cart");
