@@ -298,6 +298,10 @@ footer a:hover {
   margin-left: 20px;
 }
 
+#user-cart{
+  cursor: pointer;
+}
+
 .title {
   font-weight: bold;
   color: var(--blue-color);
@@ -398,8 +402,8 @@ footer a:hover {
 }
 
 .done-btn{
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .btn-primary:hover{

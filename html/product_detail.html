@@ -74,8 +74,8 @@
                         <a class="nav-link d-flex flex-lg-column align-items-center" href="#">
                             <!-- Blog icon -->
                             <span class="pr-1">
-                                <svg fill="#08415c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"  x="0px" y="0px" width="35px"
-                                    height="35px">
+                                <svg fill="#08415c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" x="0px"
+                                    y="0px" width="35px" height="35px">
                                     <path
                                         d="M18,21.5c0,3.58-2.92,6.5-6.5,6.5S5,25.08,5,21.5v-11C5,10.22,5.22,10,5.5,10h3C8.78,10,9,10.22,9,10.5v11 c0,1.38,1.12,2.5,2.5,2.5s2.5-1.12,2.5-2.5S12.88,19,11.5,19c-0.28,0-0.5-0.22-0.5-0.5v-3c0-0.28,0.22-0.5,0.5-0.5 C15.08,15,18,17.92,18,21.5z" />
                                     <path
@@ -135,7 +135,7 @@
                     </li>
                     <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
                         <!-- Add to cart -->
-                        <a class="nav-link d-flex flex-lg-column align-items-center" href="user-cart.html">
+                        <a class="nav-link d-flex flex-lg-column align-items-center" id="user-cart">
                             <!--Add to Cart icon-->
                             <span class="pr-4">
                                 <span class="total-quantity ">0</span>
@@ -164,8 +164,8 @@
                 </li>
                 <li class="dropdown">
                     <!-- first category -->
-                    <a class=" dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" href="#">Tyre and Wheels</a>
+                    <a class=" dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Tyre and Wheels</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="product.html?id=1&c_id=1">Wheel Accessories <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
@@ -177,8 +177,8 @@
                 </li>
                 <li class=" dropdown ">
                     <!-- Second category -->
-                    <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" href="#">Exterior</a>
+                    <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Exterior</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="product.html?id=2&c_id=1">Window Visors <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
@@ -190,8 +190,8 @@
                 </li>
                 <li class=" dropdown ">
                     <!-- 3rd category -->
-                    <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" href="#"> Interior</a>
+                    <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> Interior</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="product.html?id=3&c_id=1">Mobile Electronics <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
@@ -203,8 +203,8 @@
                 </li>
                 <li class=" dropdown ">
                     <!-- fourth category -->
-                    <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" href="#">Car Parts</a>
+                    <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Car Parts</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="product.html?id=4&c_id=1">Back & Head Lights <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
@@ -321,11 +321,11 @@
                         <li>
                             <h6 class="font-weight-bold">Sort by Categories</h6>
                         </li>
-                         <!-- all 4 categories direct the user to their respective category page -->
-                         <li><span></span><a href="../index.html#1" class="text-decoration-none">Tyre and Wheels</a></li>
-                         <li><span></span><a href="../index.html#2" class="text-decoration-none">Exterior</a></li>
-                         <li><span></span><a href="../index.html#3" class="text-decoration-none">Interior</a></li>
-                         <li><span></span><a href="../index.html#4" class="text-decoration-none">Car Parts</a></li>
+                        <!-- all 4 categories direct the user to their respective category page -->
+                        <li><span></span><a href="../index.html#1" class="text-decoration-none">Tyre and Wheels</a></li>
+                        <li><span></span><a href="../index.html#2" class="text-decoration-none">Exterior</a></li>
+                        <li><span></span><a href="../index.html#3" class="text-decoration-none">Interior</a></li>
+                        <li><span></span><a href="../index.html#4" class="text-decoration-none">Car Parts</a></li>
                     </ul>
                 </div>
                 <!-- this part contain content why user choose exotic parts 3rd column contains (2 ul elements) -->
@@ -405,8 +405,15 @@
             </small>
         </div>
     </footer>
-    <!-- script -->
+
+    <!-- scripting files -->
+
+    <!-- sweet alert scripting -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- external product details file -->
     <script src="../assets/script/product_details.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
