@@ -12,23 +12,30 @@ let getUrlParams = function (url) {
     return params;
 };
 
+// function showLoader()
+// {
+//     $(".loader").fadeIn("slow");
+// }
+// function hideLoader()
+// {
+//     $(".loader").fadeOut("slow");
+// }
 
 // asynchronous function to get fetch products from JSON
 async function getProducts() {
 
     let products;
     let hasNavigationBar = false;
-
     // get the id's
     let params = getUrlParams(window.location.href);
     let id = params.id; // main category id 
     let cid = params.c_id // sub-category id
-
+    // showLoader();
     // fetch the data from local json file
     // ***NOTE: Live Server Extension should be 
     // installed for fetching local JSON.
     const response = await fetch("../assets/JSON/exotic-parts.json");
-
+    // hideLoader();
     //convert the response in JSON format
     const categories = await response.json();
 
