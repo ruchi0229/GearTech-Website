@@ -1,32 +1,32 @@
+/*
+ * function for setting the product quantity on cart icon
+ */
 function showQuantity() {
-    let cartProducts = []; //adding all localSctorage products into array
-    let totalQuantity = 0; //set initial quantity to 0
-    let hasQuantityShow = false;
-  
-     for (let i = 0; i < localStorage.length; i++) {
-      //get product from local storage
-      let product = localStorage.getItem(localStorage.key(i));
-  
-      //parse the string into JSON
-       product = JSON.parse(product);
-      //check the data is product not users
-       if (product.product_id !== undefined) {
-        // add the products into cart
-         cartProducts.push(product);
-      //   changing quantity type from string to integer
-        let quantityInNumber = parseInt(product.product_quantity);
-        //adding total quantity of all products
-        totalQuantity += quantityInNumber;
-      }
+  let userCart = document.getElementById("user-cart");
+
+  let totalQuantity = 0; //set initial quantity to 0
+
+  // get all products ftom localStorage
+  let cartCurrentProducts = JSON.parse(localStorage.getItem("products"));
+
+  // loop through adding all products quantity
+  cartCurrentProducts.forEach(cartCurrentProduct => {
+    totalQuantity += cartCurrentProduct.product_quantity;
+  });
+
+  userCart.onclick = function(){
+    if(totalQuantity === 0){
+      swal("Your cart is currently empty!", "Please, select the item to see cart page.", "info");
     }
-    console.log(totalQuantity)
-    document.querySelector(".total-quantity").innerHTML = cartProducts.map(
-      (product) => {
-        if (!hasQuantityShow) {
-          hasQuantityShow = true;
-          return `<span>${totalQuantity}</span>`;
-        }
-      }
-    ).join('');
-  }
-  showQuantity();
+    else{
+      userCart.href = "html/user-cart.html";
+    }
+  };
+  
+  // setting the total quantity on UI - cart icon
+  document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
+
+}
+
+// set the quantity values on cart icon
+showQuantity();
