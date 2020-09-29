@@ -176,13 +176,13 @@ function showQuantity() {
 
 
 
-// Checkout button removing products from localstorage
-let clearLS = document.getElementById("checkoutbtn");
+// Done button inside Checkout removing products from localstorage
+let clearLS = document.getElementById("done-btn");
 clearLS.addEventListener('click', function(){
   for(i=0; i<100; i++){
     window.localStorage.removeItem(i);
-    setTimeout(location.reload(), 200000);
   }
+  setTimeout(location.reload(), 200000);
 });
 
 // Delivery Time

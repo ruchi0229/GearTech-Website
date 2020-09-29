@@ -386,6 +386,19 @@ footer a:hover {
   color: var(--light-color);
 }
 
+.con-shopping-btn{
+  margin-left: 20%;
+}
+
+.done-btn{
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.btn-primary:hover{
+  background-color: var(--red-color);
+}
+
 /*
    start media quries for different screen sizes
 */
