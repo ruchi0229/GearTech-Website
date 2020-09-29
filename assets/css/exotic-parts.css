@@ -201,11 +201,7 @@ footer a:hover {
   border-radius: 30px;
   background: var(--red-color);
 }
-/* styling for icons image  */
-.icon-image {
-  margin: 30px auto;
-  text-align: center;
-}
+
 /* styling of form  */
 .form-container form {
   top: 140px;
@@ -301,15 +297,7 @@ footer a:hover {
   font-size: 15px;
   margin-left: 20px;
 }
-.wishlist {
-  margin-top: 10px;
-}
-.wishlist a {
-  color: var(--red-color);
-}
-.wishlist a:hover {
-  color: var(--peach-color);
-}
+
 .title {
   font-weight: bold;
   color: var(--blue-color);
@@ -403,6 +391,19 @@ footer a:hover {
 #checkoutbtn,#button-addon3{
   background-color: var(--red-color);
   color: var(--light-color);
+}
+
+.con-shopping-btn{
+  margin-left: 20%;
+}
+
+.done-btn{
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.btn-primary:hover{
+  background-color: var(--red-color);
 }
 
 /*

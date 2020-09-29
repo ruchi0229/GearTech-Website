@@ -85,7 +85,7 @@ async function getProductDetails() {
             </div>
 
             <div class="col-md-6 product-det">
-                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / <a href="product.html?id=${category.id}&c_id=${sub_cat.c_id}"> ${sub_cat.name} </a> / <a href="#"> ${product_detail.name} </a></b></p>
+                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / <a href="product.html?id=${category.id}&c_id=${sub_cat.c_id}"> ${sub_cat.name} </a> / ${product_detail.name} </b></p>
                 <hr></p>
                 <h1>${product.name}</h1>
                 <p>Product Code: ${product.p_id}</p>
@@ -102,8 +102,6 @@ async function getProductDetails() {
                     <button class="add-product">+</button>
                     <button type="button" class="btn btn-default cart add-to-cart">Add to Cart</button>
                 </div>
-
-                <p class="wishlist"><a href="#"><b>Add to Wishlist</b></a></p>
                 <hr>
             </div>
             </div>
