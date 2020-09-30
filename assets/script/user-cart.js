@@ -1,5 +1,5 @@
-// Pre Loader
-window.onload = function(){
+// pre loader
+window.onload = function () {
   document.getElementById('loader').style.display = 'none';
 }
 
@@ -150,16 +150,18 @@ function updateCart() {
           // reflect the cart product changes in cart page
           showCartProducts();
 
-          // enforce to remove the header of cart products table
-          document.querySelector(".user-cart-head").style.display = "none";
+          // enforce to remove the header of cart products table, when no items in cart
+          if (cartCurrentProducts.length == 0) {
+            document.querySelector(".user-cart-head").style.display = "none";
+          }
         }
       }
 
       //update the localStorage if quantity >=1
-      if (quantity >= 1) { 
+      if (quantity >= 1) {
 
         //calculate total price
-        totalPrice = quantity * product.product_price; 
+        totalPrice = quantity * product.product_price;
 
         let cartItems = []; // array of selected products by user
 
@@ -201,25 +203,63 @@ function updateCart() {
   });
 }
 
-// function call to set products on user cart page
-showCartProducts();
+/******************* Checkout Functioanlity ******************/
 
-/******************* CHECKOUT FUNCTIONLITY ******************/
-
-// Done button inside Checkout removing products from localstorage
+// place order Done button 
 let clearLS = document.getElementById("done-btn");
 
-clearLS.addEventListener('click', function () {
-  // remove the products from localStorage
-  localStorage.removeItem("products");
-});
-
-// Delivery Time
+// Delivery Time - usp fields
 let checkoutbtn = document.getElementById("checkoutbtn");
 let checkouttime = document.getElementById("checkout-time");
 let deliverytime = document.getElementById("delivery-time");
 
+// removing products from localstorage when confirm order
+clearLS.addEventListener('click', function () {
+
+  /* get all personal info fields 
+   * to check if all shipment info is filled or not
+   */
+  const personalInfoFields = document.querySelectorAll(".personal-info-input");
+  const isPersonalInfoFilled = true;
+
+  /* if all shipment info is not filled 
+   * then order should not be placed
+   */
+  for (let i = 0; i < personalInfoFields.length; i++) {
+    if (personalInfoFields[i].value == "") {
+      isPersonalInfoFilled = false; // if any one field is empty
+    }
+  }
+
+  // remove products from local storage when fields are not empty
+  if (isPersonalInfoFilled) {
+    localStorage.removeItem("products");
+  }
+});
+
+// show model with order details and usp 
 checkoutbtn.addEventListener('click', () => {
+
+  /* get all personal info fields 
+   * to check if all shipment info is filled or not
+   */
+  const personalInfoFields = document.querySelectorAll(".personal-info-input");
+  const isPersonalInfoFilled = true;
+
+  for (let i = 0; i < personalInfoFields.length; i++) {
+
+    // if any fiels is empty then show error msg on modal
+    if (personalInfoFields[i].value == "") {
+      document.querySelector(".cart-modal-title").innerHTML = "Please, fill out your shipment information before checkout!";
+      isPersonalInfoFilled = false; // if any one field is empty
+    }
+  }
+
+  // confirm order place msg, if all fields are filled
+  if (isPersonalInfoFilled) {
+    document.querySelector(".cart-modal-title").innerHTML = "Your order is about to be place!";
+  }
+
   let today = new Date();
 
   let month = today.getMonth() + 1;
@@ -238,6 +278,52 @@ checkoutbtn.addEventListener('click', () => {
   checkouttime.innerText = currentDate + ' ' + currentTime;
   deliverytime.innerText = tomorrowDate + ' ' + currentTime;
 });
+
+// function to check if user is login or not
+function loginStatus() {
+
+  // get login/signin anchor tag 
+  const login = document.getElementById("loggedIn");
+
+  // get loggedin user from local storage
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  //if user is login then change the text into logout
+  if (user !== null) {
+    login.innerHTML = "Logout";
+  }
+  else {
+    login.innerHTML = "Login / Sign Up";
+  }
+
+  /* 
+   * logout the user from website when logout button is clicked
+   * otherwise redirect the user to login/signup form
+   */
+  document.querySelector(".login-btn").onclick = function () {
+
+    // if user already login
+    if (login.innerHTML == "Logout") {
+      localStorage.removeItem("loggedInUser");
+
+      // show sweet alert message to user about logout
+      swal("Logging Out...", "Your account will be logged out!", "success");
+      loginStatus(); //reflect the ui after logout
+    }
+    else {
+      document.querySelector(".login-btn").href = "form.html";
+    }
+  };
+}
+
+
+/******************** Functions Call *******************/
+
+// check login / logout status
+loginStatus();
+
+// function call to set products on user cart page
+showCartProducts();
 
 
 

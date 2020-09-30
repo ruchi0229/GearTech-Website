@@ -8,6 +8,24 @@ let fullName = document.querySelector("#full-name");
 let email = document.querySelector("#signUp-email");
 let password = document.querySelector("#signUp-password");
 
+// to add admins info in users array of objects
+let admins = [
+  {
+    name: "Admin",
+    email: "admin@gmail.com",
+    password: "ExoticParts04"
+  },
+  {
+    name: "AppAdmin",
+    email: "exoticparts@gmail.com",
+    password: "ExoticParts04"
+  }
+];
+
+// add admin user into local storage
+localStorage.setItem("users", JSON.stringify(admins));
+
+
 //function for toggle button
 function signup() {
   logIn.style.left = "-400px";
@@ -183,7 +201,7 @@ function signUpButton() {
   let password = document.querySelector("#signUp-password").value;
   let confirmPassword = document.querySelector("#confirm-password").value;
 
-  let users = []; //all users array
+  // let users = []; //all users array
 
   if (
     checkfullname1() &&
@@ -207,23 +225,23 @@ function signUpButton() {
      * add the previous users in users array, 
      * after that add the new one
      */
-    if (localStorage.getItem("users") !== null) {
-      // array of users from localStorage
-      let previousUsers = JSON.parse(localStorage.getItem("users"));
+    // if (localStorage.getItem("users") !== null) {
+    //   // array of users from localStorage
+    //   let previousUsers = JSON.parse(localStorage.getItem("users"));
 
-      previousUsers.forEach(preUser => {
-        /* if email already exist then 
-        replace the data with new one */
-        if (preUser.email !== user.email) {
-          users.push(preUser);
-        }
-      });
-    }
+    //   previousUsers.forEach(preUser => {
+    //     /* if email already exist then 
+    //     replace the data with new one */
+    //     if (preUser.email !== user.email) {
+    //       users.push(preUser);
+    //     }
+    //   });
+    // }
 
-    users.push(user); // add the current user
+    // users.push(user); // add the current user
 
-    //set updated users into local storage
-    localStorage.setItem("users", JSON.stringify(users));
+    // //set updated users into local storage
+    // localStorage.setItem("users", JSON.stringify(users));
 
     window.location.assign(login());
 
@@ -300,10 +318,14 @@ function loginButton() {
   let loginEmail = document.querySelector("#login-email");
   let loginPassword = document.querySelector("#login-paswd");
   let flag = false;
+  let loggedInUser = {
+    user_id: Date.now(),
+    email: loginEmail.value
+  };
 
   /*
    * get the users array from local storage
-   * and parse the string into JSON
+   * and parse the string into JSON.
    */
   let users = JSON.parse(localStorage.getItem("users"));
 
@@ -327,6 +349,7 @@ function loginButton() {
     }
   }
   if (flag && loginEmailValidation1()&&loginEmailValidation2() && loginPasswordValidation1() && loginPasswordValidation2()) {
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
     window.open("../index.html");
     clearLogin();
   } else {
