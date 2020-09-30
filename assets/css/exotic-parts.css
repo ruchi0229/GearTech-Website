@@ -155,6 +155,15 @@ footer a:hover {
 #form-bg {
   background-color: var(--blue-color);
 }
+#login {
+  left: "50px";
+}
+#signup {
+  left: -450px;
+}
+#butn-div {
+  left: "0px";
+}
 /* form styling    */
 .wrapper {
   width: 380px;
@@ -204,20 +213,19 @@ footer a:hover {
 
 /* styling of form  */
 .form-container form {
-  top: 140px;
+  top: 100px;
   position: absolute;
   width: 280px;
   transition: 0.5s;
+  left: 50px;
 }
 /* input field  */
 .input-field {
-  /* position: relative; */
   width: 90%;
   padding: 5px 10px;
   border: none;
   background-color: transparent;
   outline: none;
-  /* border-bottom: 1px solid var(--blue-color); */
   margin: 20px auto 5px auto;
 }
 .form-icon {
@@ -255,6 +263,18 @@ footer a:hover {
 .block {
   display: block;
   color: var(--red-color);
+}
+/* small tag contains error statements */
+#name-data,
+#email-data,
+#paswd-data,
+#confirmPaswd-data,
+#loginemail-data,
+#loginpaswd-data {
+  opacity: 0;
+}
+.fa-exclamation-circle span {
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
 
@@ -403,7 +423,7 @@ footer a:hover {
 }
 /* child span store quantity */
 .total-quantity span {
-  padding: 2px 4px
+  padding: 2px 4px;
 }
 /* checkout button styling */
 #checkoutbtn,#button-addon3{
@@ -456,6 +476,18 @@ footer a:hover {
   .main-heading {
     font-size: 1.75rem;
   }
+}
+/* zoom effect on categories images */
+#zoom-img{
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear; 
+}
+#zoom-img:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 @media screen and (max-width: 800px) {
