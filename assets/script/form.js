@@ -203,15 +203,15 @@ function signUpButton() {
     };
 
     /*
-     * if users array is not setted then
-     * add the previous users in users array,
+     * if users array is not setted then 
+     * add the previous users in users array, 
      * after that add the new one
      */
     if (localStorage.getItem("users") !== null) {
       // array of users from localStorage
       let previousUsers = JSON.parse(localStorage.getItem("users"));
 
-      previousUsers.forEach((preUser) => {
+      previousUsers.forEach(preUser => {
         /* if email already exist then 
         replace the data with new one */
         if (preUser.email !== user.email) {
@@ -228,8 +228,9 @@ function signUpButton() {
     window.location.assign(login());
 
     clearData();
-  } else {
-    console.log("error");
+  }
+  else {
+    console.log("error")
   }
 }
 

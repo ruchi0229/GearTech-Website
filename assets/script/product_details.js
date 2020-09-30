@@ -1,6 +1,10 @@
-console.log("hey Mahnoor")
+// Pre Loader
+window.onload = function(){
+  document.getElementById('loader').style.display = 'none';
+}
+
 // get the category and sub category id from url
-let getUrlParams = function (url) {
+let getUrlParamsProductId = function (url) {
   let params = {};
   (url + "?")
     .split("?")[1]
@@ -20,7 +24,7 @@ async function getProductDetails() {
   let products = true;
 
   // get the id's
-  let params = getUrlParams(window.location.href);
+  let params = getUrlParamsProductId(window.location.href);
   let pid = params.p_id; // product id url
 
   // fetch the data from local json file
@@ -85,7 +89,7 @@ async function getProductDetails() {
             </div>
 
             <div class="col-md-6 product-det">
-                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / <a href="product.html?id=${category.id}&c_id=${sub_cat.c_id}"> ${sub_cat.name} </a> / ${product_detail.name}</b></p>
+                <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / <a href="product.html?id=${category.id}&c_id=${sub_cat.c_id}"> ${sub_cat.name} </a> / ${product_detail.name} </b></p>
                 <hr></p>
                 <h1>${product.name}</h1>
                 <p>Product Code: ${product.p_id}</p>
@@ -98,12 +102,10 @@ async function getProductDetails() {
                 <div>
                     <label>Quantity:</label>
                     <button class="sub-product">-</button>
-                    <input type="number" name="quantity" value="1" disabled class="product-quantity">
+                    <input type="text" name="quantity" value="1" class="cart-edit product-quantity" disabled>
                     <button class="add-product">+</button>
                     <button type="button" class="btn btn-default cart add-to-cart">Add to Cart</button>
                 </div>
-
-                <p class="wishlist"><a href="#"><b>Add to Wishlist</b></a></p>
                 <hr>
             </div>
             </div>
@@ -132,7 +134,7 @@ async function getProductDetails() {
                     return `<div class="col-md-4 text-center">
                               <a href="product_detail.html?p_id=${similarProduct.p_id}"><img src="${similarProduct.url1}" height="300" ></a>
                               <a href="product_detail.html?p_id=${similarProduct.p_id}"><h6 class="mt-2 similar-product-heading">${similarProduct.name}</h6></a>
-                              <span class="badge badge-pill badge-primary py-2 px-3">${similarProduct.price} RS.</span>
+                              <span class="badge badge-pill badge-danger text-white py-2 px-3">${similarProduct.price} RS.</span>
                           </div>`;
                   }
                 }).join("");
@@ -157,6 +159,7 @@ async function getProductDetails() {
               quantity++;
               productQuantity.value = quantity;
             };
+
             // subtract totalprice and quantity
             subtractProduct.onclick = function () {
               if (quantity > 1) {
@@ -167,8 +170,8 @@ async function getProductDetails() {
             };
             // Save the total price and quantiy from all the products
             addToCart.onclick = function () {
-              // adding the selected products in local storage
-              let productKey = product_detail.p_id; // generating unique key w.r.t to the product id for storing product in local storage
+
+              let cartItems = []; // array of selected products by user
 
               // getting all selected product details
               let productJson = {
@@ -177,64 +180,88 @@ async function getProductDetails() {
                 product_name: product_detail.name,
                 product_description: product_detail.description,
                 product_image: product_detail.url1,
-                product_quantity: productQuantity.value,
+                product_quantity: parseInt(productQuantity.value),
                 product_price: product_detail.price,
                 total_price: totalPrice
               };
 
+              /*
+                check if, products are already added in cart then 
+                keep them into cart, and then add new products
+                after the previous ones.
+              */
+              if (localStorage.getItem("products") !== null) {
+
+                let previousProducts = JSON.parse(localStorage.getItem("products"));
+                previousProducts.forEach(preProduct => {
+
+                  /*
+                    if selected product have aleady been addedd 
+                    that should be override with the new one.
+                  */
+                  if (preProduct.product_id !== productJson.product_id) {
+                    cartItems.push(preProduct);
+                  }
+                });
+              }
+
+              // adding new selected products
+              cartItems.push(productJson);
+
               // storing purchased product detail in local storage with totalprice and quantity
-              localStorage.setItem(productKey, JSON.stringify(productJson));
-              setTimeout(location.reload(), 1000);
+              localStorage.setItem("products", JSON.stringify(cartItems));
 
-             
+              // update the quantity values on cart icon
+              showQuantity();
             };
-           
-
           }
 
           // function call - add products into localStorage
           addToCart();
-         
+
         }
 
       });
     });
   });
-  // location.reload();
 
 }
-//function calling - get products
 
-getProductDetails();
+/*
+ * function for setting the product quantity on cart icon
+ */
 function showQuantity() {
-  let cartProducts = []; //adding all localSctorage products into array
+  let userCart = document.getElementById("user-cart");
+
   let totalQuantity = 0; //set initial quantity to 0
-  let hasQuantityShow = false;
 
-   for (let i = 0; i < localStorage.length; i++) {
-    //get product from local storage
-    let product = localStorage.getItem(localStorage.key(i));
+  // get all products ftom localStorage
+  let cartCurrentProducts = JSON.parse(localStorage.getItem("products"));
 
-    //parse the string into JSON
-     product = JSON.parse(product);
-    //check the data is product not users
-     if (product.product_id !== undefined) {
-      // add the products into cart
-       cartProducts.push(product);
-    //   changing quantity type from string to integer
-      let quantityInNumber = parseInt(product.product_quantity);
-      //adding total quantity of all products
-      totalQuantity += quantityInNumber;
-    }
+  if (cartCurrentProducts !== null) {
+    // loop through adding all products quantity
+    cartCurrentProducts.forEach(cartCurrentProduct => {
+      totalQuantity += cartCurrentProduct.product_quantity;
+    });
   }
-  console.log(totalQuantity)
-  document.querySelector(".total-quantity").innerHTML = cartProducts.map(
-    (product) => {
-      if (!hasQuantityShow) {
-        hasQuantityShow = true;
-        return `<span>${totalQuantity}</span>`;
-      }
+
+  userCart.onclick = function () {
+    if (totalQuantity === 0) {
+      swal("Your cart is currently empty!", "Please, select the item to see cart page.", "info");
     }
-  ).join('');
+    else {
+      userCart.href = "user-cart.html";
+    }
+  };
+
+  // setting the total quantity on UI - cart icon
+  document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
+
 }
+
+//function calling - get products
+getProductDetails();
+
+// set the quantity values on cart icon
 showQuantity();
+
