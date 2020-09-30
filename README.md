@@ -6,5 +6,6 @@ Exotic Parts is Published on: https://bhagiasheri.github.io/Exotic-Parts-E-Comme
 
 Login Credentials
 
-admin@gmail.com
-ExoticParts
+Email Address: admin@gmail.com
+
+Password: ExoticParts
