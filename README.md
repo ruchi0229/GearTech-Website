@@ -8,4 +8,4 @@ Exotic Parts is Published on: https://bhagiasheri.github.io/Exotic-Parts-E-Comme
 
 Email Address: admin@gmail.com
 
-Password: ExoticParts
+Password: ExoticParts04
