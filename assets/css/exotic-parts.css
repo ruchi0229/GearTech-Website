@@ -318,8 +318,13 @@ footer a:hover {
   margin-left: 20px;
 }
 
-#user-cart{
+#user-cart, .login-btn{
   cursor: pointer;
+}
+
+#address-input{
+  border-radius: 2%;
+  height: 120px;
 }
 
 .title {
