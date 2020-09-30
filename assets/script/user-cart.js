@@ -220,7 +220,7 @@ clearLS.addEventListener('click', function () {
    * to check if all shipment info is filled or not
    */
   const personalInfoFields = document.querySelectorAll(".personal-info-input");
-  const isPersonalInfoFilled = true;
+  let isPersonalInfoFilled = true;
 
   /* if all shipment info is not filled 
    * then order should not be placed
@@ -244,7 +244,7 @@ checkoutbtn.addEventListener('click', () => {
    * to check if all shipment info is filled or not
    */
   const personalInfoFields = document.querySelectorAll(".personal-info-input");
-  const isPersonalInfoFilled = true;
+  let isPersonalInfoFilled = true;
 
   for (let i = 0; i < personalInfoFields.length; i++) {
 

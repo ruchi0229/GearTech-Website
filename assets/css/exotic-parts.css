@@ -324,7 +324,7 @@ footer a:hover {
 
 #address-input{
   border-radius: 2%;
-  height: 120px;
+  height: 120px !important;
 }
 
 .title {
