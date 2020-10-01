@@ -25,6 +25,7 @@ function login() {
 // Name Validation
 let checkName = "^[a-zA-Z]+$";
 let nameData = document.querySelector("#name-data");
+// name validation on blur
 function checkfullname1() {
   if (fullName.value == null || fullName.value.length < 1) {
     nameData.innerHTML =
@@ -43,6 +44,7 @@ function checkfullname1() {
     return true;
   }
 }
+// name validation on key up
 function checkfullname2() {
   if (fullName.value == "") {
     nameData.innerHTML =
@@ -68,7 +70,7 @@ function checkfullname2() {
 // Email Validation
 let emailData = document.querySelector("#email-data");
 let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
+// email validation on blur
 function checkemail1() {
   if (email.value.length == "") {
     emailData.innerHTML =
@@ -85,7 +87,7 @@ function checkemail1() {
     return true;
   }
 }
-
+// email validation on key up
 function checkemail2() {
   if (email.value.length == "") {
     emailData.innerHTML =
@@ -106,7 +108,7 @@ function checkemail2() {
 
 let passwordFormat = /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{8,}$/;
 let passwordData = document.querySelector("#paswd-data");
-
+// password validation on blur
 function checkpassword1() {
   if (password.value.length == "") {
     passwordData.innerHTML =
@@ -124,7 +126,7 @@ function checkpassword1() {
     return true;
   }
 }
-
+// password validation on key up
 function checkpassword2() {
   if (password.value.length !== "") {
     passwordData.style.opacity = 0;
@@ -139,6 +141,7 @@ function checkpassword2() {
 // Validation for Confirm Password
 let confirmPassword = document.querySelector("#confirm-password");
 let confirmPasswordData = document.querySelector("#confirmPaswd-data");
+// confirm  password validation on blur
 function checkconfirmpassword1() {
   if (confirmPassword.value != password.value && confirmPassword.value !== "") {
     confirmPasswordData.innerHTML =
@@ -154,6 +157,7 @@ function checkconfirmpassword1() {
   }
   return true;
 }
+// confirm password  validation on key
 function checkconfirmpassword2() {
   if (
     confirmPassword.value.length != "" &&
