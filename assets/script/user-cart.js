@@ -77,10 +77,6 @@ function showCartProducts() {
     let discountBill = totalBill - ((totalBill * 10) / 100);    // calculating discount
     document.querySelector(".checkout-discount-bill").innerHTML = discountBill + " RS.";
 
-    // setting the total quantity on UI - cart icon
-    document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
-
-
     /********************* edit cart functionality ********************/
 
     // get all button of table
@@ -106,6 +102,9 @@ function showCartProducts() {
           </div>
        </div>`;
   }
+
+  // setting the total quantity on UI - cart icon
+  document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
 }
 
 /**
