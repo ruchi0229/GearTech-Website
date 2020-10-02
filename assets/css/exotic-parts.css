@@ -312,15 +312,17 @@ footer a:hover {
   text-align: center;
   color: var(--light-color);
 }
-
+ /* cart icon on nav bar */
 .cart {
   font-size: 15px;
   margin-left: 20px;
 }
-
+/* class for both cart icon  and login btn */
 #user-cart, .login-btn{
   cursor: pointer;
 }
+
+
 
 #address-input{
   border-radius: 2%;
@@ -416,7 +418,7 @@ footer a:hover {
   margin: 12px;
 }
 /* parent span on add to cart icon show quantity */
-.total-quantity {
+.total-quantity, .total-quantity-1 {
   position: relative;
   left: 49px;
   bottom: 8px;
@@ -501,6 +503,7 @@ footer a:hover {
     top: 23%;
     font-size: 2.5rem;
   }
+ 
 }
 
 @media screen and (max-width: 620px) {
@@ -511,5 +514,37 @@ footer a:hover {
   }
   .carousel-item h3 {
     font-size: 1rem;
+  }
+}
+/* cart icon responsiveness on different screen sizes */
+@media only screen and (max-width: 991px)  {
+  #user-cart{
+    position: relative;
+    right: 4%;
+  }
+}
+
+@media only screen and (max-width: 768px)  {
+  #user-cart{
+    position: relative;
+    right: 3%;
+  }
+}
+@media only screen and (max-width: 680px)  {
+  #user-cart{
+    position: relative;
+    right: 5%;
+  }
+}
+@media only screen and (max-width: 580px)  {
+  #user-cart{
+    position: relative;
+    right: 6%;
+  }
+}
+@media only screen and (max-width: 340px)  {
+  #user-cart{
+    position: relative;
+    right: 8%;
   }
 }
