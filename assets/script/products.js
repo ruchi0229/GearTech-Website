@@ -1,3 +1,8 @@
+// Pre Loader
+window.onload = function () {
+    document.getElementById('loader').style.display = 'none';
+}
+
 // get the category and sub category id from url
 let getUrlParams = function (url) {
     let params = {};
@@ -12,16 +17,6 @@ let getUrlParams = function (url) {
     return params;
 };
 
-function showLoader()
-{
-    $(".loader").fadeIn("slow");
-    $("#myElement").css("display", "none");
-}
-function hideLoader()
-{
-    $(".loader").fadeOut("slow");
-}
-
 // asynchronous function to get fetch products from JSON
 async function getProducts() {
 
@@ -31,12 +26,10 @@ async function getProducts() {
     let params = getUrlParams(window.location.href);
     let id = params.id; // main category id 
     let cid = params.c_id // sub-category id
-    // showLoader();
     // fetch the data from local json file
     // ***NOTE: Live Server Extension should be 
     // installed for fetching local JSON.
     const response = await fetch("../assets/JSON/exotic-parts.json");
-    // hideLoader();
     //convert the response in JSON format
     const categories = await response.json();
 
@@ -67,10 +60,9 @@ async function getProducts() {
                     return `
                         <div class="col-md-4">
                             <div class="product-top">
-                               <a href="product_detail.html?p_id=${product.p_id}"><img src=${product.url1} height=300></a>
+                               <a href="product_detail.html?p_id=${product.p_id}"><img src=${product.url1}></a>
                                <div class="overlay">
                                    <a href="product_detail.html?p_id=${product.p_id}" class="btn btn-secondary" title="Quick View"><i class="far fa-eye"></i></a>
-                                   <button type="button" class="btn btn-secondary" title="Add to Cart"><i class="fas fa-cart-plus"></i></button>
                                 </div>    
                             </div>
                             <div class="product-bottom text-center">
@@ -89,37 +81,80 @@ async function getProducts() {
     });
 }
 
+/*
+ * function for setting the product quantity on cart icon
+ */
+function showQuantity() {
+
+    let userCart = document.getElementById("user-cart");
+    let totalQuantity = 0; //set initial quantity to 0
+
+    // get all products ftom localStorage
+    let cartCurrentProducts = JSON.parse(localStorage.getItem("products"));
+
+    if (cartCurrentProducts !== null) {
+        // loop through adding all products quantity
+        cartCurrentProducts.forEach(cartCurrentProduct => {
+            totalQuantity += cartCurrentProduct.product_quantity;
+        });
+    }
+    userCart.onclick = function () {
+        if (totalQuantity === 0) {
+            swal("Your cart is currently empty!", "Please, select the item to see cart page.", "info");
+        }
+        else {
+            userCart.href = "user-cart.html";
+        }
+    };
+
+    // setting the total quantity on UI - cart icon
+    document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
+
+}
+
+// function to check if user is login or not
+function loginStatus() {
+
+    // get login/signin anchor tag 
+    const login = document.getElementById("loggedIn");
+
+    // get loggedin user from local storage
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    //if user is login then change the text into logout
+    if (user !== null) {
+        login.innerHTML = "Logout";
+    }
+    else {
+        login.innerHTML = "Login / Sign Up";
+    }
+
+    /* 
+     * logout the user from website when logout button is clicked
+     * otherwise redirect the user to login/signup form
+     */
+    document.querySelector(".login-btn").onclick = function () {
+
+        // if user already login
+        if (login.innerHTML == "Logout") {
+            localStorage.removeItem("loggedInUser");
+
+            // show sweet alert message to user about logout
+            swal("Logging Out...", "Your account will be logged out!", "success");
+            loginStatus(); //reflect the ui after logout
+        }
+        else {
+            document.querySelector(".login-btn").href = "form.html";
+        }
+    };
+}
+
+// check login / logout status
+loginStatus();
+
+
 //function calling - get products
 getProducts();
-function showQuantity() {
-    let cartProducts = []; //adding all localSctorage products into array
-    let totalQuantity = 0; //set initial quantity to 0
-    let hasQuantityShow = false;
-  
-     for (let i = 0; i < localStorage.length; i++) {
-      //get product from local storage
-      let product = localStorage.getItem(localStorage.key(i));
-  
-      //parse the string into JSON
-       product = JSON.parse(product);
-      //check the data is product not users
-       if (product.product_id !== undefined) {
-        // add the products into cart
-         cartProducts.push(product);
-      //   changing quantity type from string to integer
-        let quantityInNumber = parseInt(product.product_quantity);
-        //adding total quantity of all products
-        totalQuantity += quantityInNumber;
-      }
-    }
-    console.log(totalQuantity)
-    document.querySelector(".total-quantity").innerHTML = cartProducts.map(
-      (product) => {
-        if (!hasQuantityShow) {
-          hasQuantityShow = true;
-          return `<span>${totalQuantity}</span>`;
-        }
-      }
-    ).join('');
-  }
-  showQuantity();
+
+// set the quantity values on cart icon
+showQuantity();

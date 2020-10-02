@@ -155,6 +155,7 @@ footer a:hover {
 #form-bg{
   background-color: var(--blue-color);
 }
+
 #form-bg:before{
   content: "";
   display: block;
@@ -165,6 +166,17 @@ footer a:hover {
   left:0;
   background-image: url('../images/website-images/Auto-Parts-Accessories-bg-image.jpg');
   opacity: 0.1;
+}
+
+
+#login {
+  left: "50px";
+}
+#signup {
+  left: -450px;
+}
+#butn-div {
+  left: "0px";
 }
 
 /* form styling    */
@@ -214,10 +226,11 @@ footer a:hover {
 
 /* styling of form  */
 .form-container form {
-  top: 140px;
+  top: 100px;
   position: absolute;
   width: 280px;
   transition: 0.5s;
+  left: 50px;
 }
 /* input field  */
 .input-field {
@@ -264,6 +277,18 @@ footer a:hover {
 .block {
   display: block;
   color: var(--red-color);
+}
+/* small tag contains error statements */
+#name-data,
+#email-data,
+#paswd-data,
+#confirmPaswd-data,
+#loginemail-data,
+#loginpaswd-data {
+  opacity: 0;
+}
+.fa-exclamation-circle span {
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
 
@@ -305,6 +330,15 @@ footer a:hover {
 .cart {
   font-size: 15px;
   margin-left: 20px;
+}
+
+#user-cart, .login-btn{
+  cursor: pointer;
+}
+
+#address-input{
+  border-radius: 2%;
+  height: 120px !important;
 }
 
 .title {
@@ -354,10 +388,24 @@ footer a:hover {
   margin-left: 5%;
   transition: 0.5s;
 }
-
 .similar-product-heading{
   color: var(--blue-color);
   font-weight: bold;
+}
+#loader {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: block;
+  z-index: 99;
+}
+#loader-image{
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  z-index: 100;
 }
 
 /* cart page styling */
@@ -394,7 +442,7 @@ footer a:hover {
 }
 /* child span store quantity */
 .total-quantity span {
-  padding: 2px 4px
+  padding: 2px 4px;
 }
 /* checkout button styling */
 #checkoutbtn,#button-addon3{
@@ -407,12 +455,21 @@ footer a:hover {
 }
 
 .done-btn{
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .btn-primary:hover{
   background-color: var(--red-color);
+}
+
+.contact-form .input-block{
+  margin-top: 12px;
+}
+
+.input-block label{
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 /*
@@ -439,6 +496,18 @@ footer a:hover {
     font-size: 1.75rem;
   }
 }
+/* zoom effect on categories images */
+#zoom-img{
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear; 
+}
+#zoom-img:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
 
 @media screen and (max-width: 800px) {
   /* responsive font size for tagline and usp */
@@ -457,15 +526,4 @@ footer a:hover {
   .carousel-item h3 {
     font-size: 1rem;
   }
-}
-
-.loader {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: url('../images/website-images/Spinner-1s-200px.gif') 50% 50% no-repeat ;
-  opacity: .8;
 }

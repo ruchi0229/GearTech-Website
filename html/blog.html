@@ -5,7 +5,7 @@
     <!--  Meta  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail</title>
+    <title>Exotic Parts</title>
 
     <!-- add icon link -->
     <link rel="icon" href="../assets/images/website-images/logo.png" type="image/x-icon">
@@ -21,15 +21,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Roboto+Slab:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
     <!-- font awesome icon link -->
     <script src="https://kit.fontawesome.com/ca30ddfff9.js" crossorigin="anonymous"></script>
+
+    <!-- jquery link  -->
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body>
-    <div id="loader">
-        <img id="loader-image" src="../assets/images/website-images/Spinner-1s-200px.gif" alt="Loading.."/>
-    </div>
     <header class="header">
         <!-- first nav bar with anchor tags  contains logo, about, contact us , login and add to cart -->
         <nav class="navbar navbar-expand-lg fixed-top p-0 font-weight-bold mb-4">
@@ -116,7 +117,7 @@
                 <ul class="navbar-nav mr-4">
                     <!-- login and signup -->
                     <li class="nav-item pl-4 pl-lg-0 pl-md-4 pl-sm-4">
-                        <a class="nav-link d-flex flex-lg-column align-items-center login-btn">
+                        <a class="nav-link d-flex flex-lg-column align-items-center" href="form.html">
                             <!-- login icon  -->
                             <span class="pr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36"
@@ -133,7 +134,7 @@
                                         </g>
                                     </g>
                                 </svg></span>
-                            <span id="loggedIn">Login / Sign Up</span></a>
+                            <span>LogIn/Sign Up</span></a>
                         </a>
                     </li>
                     <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
@@ -149,6 +150,7 @@
                                 </svg>
                             </span>
                             <span>Cart</span>
+
                         </a>
                     </li>
                 </ul>
@@ -167,7 +169,7 @@
                 </li>
                 <li class="dropdown">
                     <!-- first category -->
-                    <a class=" dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
+                    <a class=" dropdown-toggle text-decoration-none  text-white " id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Tyre and Wheels</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="product.html?id=1&c_id=1">Wheel Accessories <span
@@ -220,53 +222,130 @@
             </ul>
         </nav>
     </header>
-
-    <!-- Product Detail-->
-    <div class="products-container">
-        <!-- Complete product detail w.r.t category from products-details.js -->
-        <!-- Product Specification -->
-
-
-    </div>
-    <!-- Similar Products -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h3 class="title">Similar Products</h3>
-                <hr>
+    <main>
+        <section>
+            <div class="d-none d-lg-inline d-md-inline d-sm-none ">
+                <h1 class="mb-2 text-center mx-auto mt-5 font-weight-bold ">
+                    Car Maintenance Tips to Keep Your Vehicle in Good
+                    Shape
+                </h1>
             </div>
-        </div>
+            <!-- main image  -->
+            <img src="../assets/images/website-images/tagline-image.jpg " alt="blog"
+                class="img-fluid w-100 rounded mb-5">
+            <!-- blog content -->
+            <div class="w-75 mx-auto mb-5">
+                <h2>Below are some tips to keep auto parts in the best shape.</h2>
+                <div class="w-100 w-sm-100 w-md-75 w-lg-50 mr-lg-5 mr-md-5 text-justify">
+                    <p>
+                        Properly maintaining your auto parts is key to keeping your car in top condition. It can also
+                        help
+                        ensure your
+                        safety, the safety of your passengers and your fellow drivers. Here are some ways to help keep
+                        your
+                        car
+                        running smoothly.
+                    </p>
+                    <h6 class="font-weight-bold">Check Your Air Filter</h6>
+                    <p>Many car problems are due to clogged air filters or loose fittings. The air filter prevents dirt
+                        and particles from entering the engine. During combustion your engine needs air, and a clogged
+                        filter may impact performance.
 
-        <div class="row similar-products">
+                        You should get your filters changed every 12 months or after 12000 miles, whichever comes fast.
+                        Don't ignore this maintenance as it could lead to problems in your car engine or car cabin as
+                        you also breath air that is filtered by the internal cabin air filter.</p>
+                    <h6 class="font-weight-bold">Change engine oil and filter regularly</h6>
+                    <p>Many car owner’s manual today recommend increasing the interval between oil changes. But frequent
+                        oil change is still necessary especially if you are maintaining a used car. Frequent oil changes
+                        flush abrasive dirt and metal particles out of the engine, thus prolonging its life. Change the
+                        oil filters because the old filters contain buildup of oil and dirt particles that will
+                        otherwise remain and mix with the new, clean oil.</p>
 
-            <!-- <div class="col-3 text-center">
-                <img src="../assets/images/website-images/side-mirrors.png">
-                <h4>Door Accessories</h4>
-                <span class="badge badge-pill badge-danger">$50.00</span>
+                    <h6 class="font-weight-bold">Change spark plugs</h6>
+                    <p>Many manufacturers recommend changing spark plugs every 50, 000 km. This ensures good fuel
+                        mileage and high engine performance.
+                    </p>
+                    <h6 class="font-weight-bold">Change spark plugs</h6>
+                    <p>Before a summer filled with road trips, be sure to inspect your tires. Carefully look at them,
+                        checking for excessive tread wear, uneven wear and bulges in the sidewalls. These are all signs
+                        that you may need a new set of tires before hitting the highway.</p>
+                    <p>Driving on worn tires is extremely dangerous. Not only will you experience poor handling and
+                        braking, but worn tires are also prone to blowouts – putting you and your passengers in a
+                        precarious position.</p>
+                    <p>Be sure to check the tire pressure to ensure that they aren’t under or over inflated. This will
+                        help maximize gas mileage on those long trips. Also take a moment to examine your spare tire to
+                        make sure it is inflated properly. If you get sidelined with a flat tire, you’ll be glad you did
+                        this.</p>
+                    <h6 class="font-weight-bold">Keep the dirt out</h6>
+                    <p>Dirt, dust and other contaminants are your car’s enemy. Dirt in the engine can cause a host of
+                        problems including reduced gas mileage while dirt in the heating and cooling system can
+                        compromise the air quality inside your vehicle. </p>
+                    <p>To keep the dirt out, make sure your engine air filter and cabin air filter are clean and up to
+                        the job. Do a visual inspection of both filters and if either are excessively dirty, replace it
+                        with a new filter. A dirty engine air filter reduces the amount of fresh air your engine gets
+                        while a clogged cabin air filter can affect the performance of the heating and air conditioning
+                        and lead to musty odors inside your car. </p>
+                    <h6 class="font-weight-bold">Check Your Battery</h6>
+                    <p>I have had my car battery stop working. Everything seemed fine then my car just wouldn't start.
+                        We all may be faced with a situation like this, where we are left stranded somewhere. It
+                        wouldn't be fun if I was stranded at night with just my cell phones. </p>
+                    <p>To avoid this I can check my car battery. I can first check the cables and their connection to
+                        the
+                        terminals. You can check for leakage or any mineral build up around the cables and terminals.
+                        Clean the terminal with a battery cleaning brush if needed and you can always apply dielectric
+                        grease to help them stay corrosion free.
+
+                        Using a multimeter with the engine off, you can check if the battery is charged fully (about
+                        12.4 to 12.7 volts). When the car is on you can carefully check the voltage. It should be around
+                        13.7 to 14.7 volts. </p>
+                    <h6 class="font-weight-bold">Clean your Windshields and Replace the Wipers</h6>
+                    <p>A dirty windshield can prove to be a lot of hassle when you can't see clearly. If they are not
+                        cleaned regularly they can cause visual impairments and can result in accidents at times.
+
+                        It is very important for the driver to have a clear view of the road for safe driving. If you
+                        don't clean them, the dirt and particle can accumulate and scratch the windshield when you use
+                        the wipers. </p>
+                    <p>If the rainy season is approaching, check your wipers and get them replaced if needed. Using
+                        damaged wipers can cause scratches on the glass and obstruct your view, which might lead the
+                        need to replace your entire windshield.</p>
+                    <h6 class="font-weight-bold">Inspect and Replace Serpentine Belts</h6>
+                    <p>Thoroughly inspect your serpentine belts and check for wear. If these belts fail, they can cause
+                        damage to the engine parts, making a small priced item that needs to be replaced turn into a
+                        huge bill.</p>
+                    <p>If you get regular maintenance, your car dealer service center should let you know when it's time
+                        to replace the belt. It is recommended to get it checked every 60,000 miles but you should look
+                        at the owner's manual to get the best information for your car. Replacing a belt is usually easy
+                        with a few tools.</p>
+                    <h6 class="font-weight-bold">Check your Brakes</h6>
+                    <p>You may have seen a movie where someone can't sop their car because their brake line were cut. In
+                        real life we won't have this scene play out, but is we ignore brake problems we can find
+                        ourselves getting into an accident.
+
+                        If the brakes fail to work properly, it can be caused by some of the following: the rotors, the
+                        brake pads, the brake fluid, and the break pedal. The most common reason would be the brake pads
+                        or a leak in the brake fluid.</p>
+                    <p>It's a good idea to check your breaks if you notice any issues out of the ordinary. If you want
+                        to check the breaks yourself, you'll need to inspect the brake pads and brake fluid reservoir.
+                        This usually requires removing the tires and possibly getting under the car if you suspect a
+                        brake fluid leak. </p>
+                    <h6 class="font-weight-bold">Carry the Automotive Tools at all Times</h6>
+                    <p>A good tip to maintain your car on the go is to carry some basic tools, so you'll be ready be
+                        ready to face different problems and have tools to work with. Delaying fixing a leak for
+                        example, can potentially cause damage to your engine of other car systems.
+
+                        Either you will need to call for a tow truck or use your tools to work on the problem. Driving
+                        might not be an option.</p>
+                    <p>Tools that might be helpful are: thick gloves, heat resistant waterproof silicone tape,
+                        electrical tape, wire cutters, screw drivers (Phillips head, and flat head), tongue and grove
+                        pliers, a flashlight, and a knife. A tool kit might come in handy.
+
+                        A set of tools, which is readily available will give you choices that you wouldn't have
+                        otherwise. They come in handy in other situations as well. Deciding where to store them might be
+                        the hardest decision you make.</p>
+                </div>
             </div>
-
-            <div class="col-3 text-center">
-                <img src="../assets/images/website-images/side-mirrors.png">
-                <h4>Door Accessories</h4>
-                <span class="badge badge-pill badge-danger">$58.00</span>
-            </div>
-
-            <div class="col-3 text-center">
-                <img src="../assets/images/website-images/side-mirrors.png">
-                <h4>Door Accessories</h4>
-                <span class="badge badge-pill badge-danger">$82.00</span>
-            </div>
-
-            <div class="col-3 text-center">
-                <img src="../assets/images/website-images/side-mirrors.png">
-                <h4>Door Accessories</h4>
-                <span class="badge badge-pill badge-danger">$74.00</span>
-            </div> -->
-
-        </div>
-    </div>
-
-
+        </section>
+    </main>
     <!-- footer contains 3 columns-->
     <footer>
         <section class="pb-3 footer-section">
@@ -331,7 +410,7 @@
                         <li><span></span><a href="../index.html#4" class="text-decoration-none">Car Parts</a></li>
                     </ul>
                 </div>
-                <!-- this part contain content why user choose exotic parts 3rd column contains (2 ul elements) -->
+                <!-- this footer part contains content why user choose exotic parts 3rd column contains (2 ul elements) -->
                 <div>
                     <!-- 1st ul -->
                     <ul class="list-unstyled container">
@@ -408,24 +487,12 @@
             </small>
         </div>
     </footer>
-
     <!-- scripting files -->
 
     <!-- sweet alert scripting -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <!-- external product details file -->
-    <script src="../assets/script/product_details.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+     <!-- external index js file -->
+     <script src="../assets/script/blog.js"></script>
 
 </body>
 

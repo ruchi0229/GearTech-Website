@@ -2,272 +2,321 @@
 let logIn = document.querySelector("#login");
 let signUp = document.querySelector("#signup");
 let butnToggle = document.querySelector("#butn-div");
+// signUp form
+let email = document.querySelector("#signUp-email"); // input for email
+let password = document.querySelector("#signUp-password"); // input for password
+let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //regex for valid email address
+// login form
+let loginEmail = document.querySelector("#login-email"); //input for email
+let loginPassword = document.querySelector("#login-paswd"); // input for password
 
-//function for toggle
+// to add admins info in users array of objects
+let admins = [
+  {
+    name: "Admin",
+    email: "admin@gmail.com",
+    password: "ExoticParts04",
+  },
+  {
+    name: "AppAdmin",
+    email: "exoticparts@gmail.com",
+    password: "ExoticParts04",
+  },
+];
+
+// add admin user into local storage
+localStorage.setItem("users", JSON.stringify(admins));
+
+//function for toggle button
 function signup() {
   logIn.style.left = "-400px";
   signUp.style.left = "50px";
   butnToggle.style.left = "110px";
 }
-
+//function for toggle button
 function login() {
   logIn.style.left = "50px";
   signUp.style.left = "-450px";
   butnToggle.style.left = "0px";
-
 }
 
-// form validation
+// Signup form validation
 
-
-// 
-
-
-
-
-// signup validation
-// Name Validation
-function fullnameBlur() {
-  let fullName = document.querySelector("#full-name");
-
-  if (fullName.value == null || fullName.value == "") {
-    let nameData = document.querySelector("#name-data");
-    nameData.innerText = "! please input this field";
+// name validation on blur
+function checkfullname1() {
+  let fullName = document.querySelector("#full-name"); // input for fullname
+  let nameData = document.querySelector("#name-data"); //error span for full name
+  let checkName = "^[a-zA-Z]+$"; //regex for valid fullname
+  if (fullName.value == null || fullName.value.length < 1) {
+    nameData.innerHTML =
+      '<i class="fas fa-exclamation-circle"><span>Please input this field</span>';
+    nameData.style.opacity = 1;
     return false;
   }
-  return true;
-}
-
-
-function fullnameFocus() {
-  let checkName = "/[a-zA-Z]/g";
-  let fullName = document.querySelector("#full-name");
-
-
   if (!fullName.value.match(checkName)) {
-    let nameData = document.querySelector("#name-data");
-    nameData.innerText = "!Names only include letter";
+    nameData.innerHTML =
+      '<i class="fas fa-exclamation-circle"> <span>Name only include letters</span>';
+    nameData.style.opacity = 1;
+    return false;
+  } else {
+    nameData.style.opacity = 0;
+    return true;
+  }
+}
+// name validation on key up
+function checkfullname2() {
+  let fullName = document.querySelector("#full-name"); // input for fullname
+  let nameData = document.querySelector("#name-data"); //error span for full name
+  let checkName = "^[a-zA-Z]+$"; //regex for valid fullname
+  if (fullName.value == "") {
+    nameData.innerHTML =
+      '<i class="fas fa-exclamation-circle"><span>Please input this field</span>';
+    nameData.style.opacity = 1;
     return false;
   }
-  return true;
-}
-
-function fullnameKeyup() {
-  let checkName = "/[a-zA-Z]/g";
-  let fullName = document.querySelector("#full-name");
-  if (fullName.value != "" && checkName.search(fullName.value)) {
-    let nameData = document.querySelector("#name-data");
-    nameData.innerText = "";
+  if (!fullName.value.match(checkName)) {
+    nameData.innerHTML =
+      '<i class="fas fa-exclamation-circle"> <span>Name only include letters</span>';
+    nameData.style.opacity = 1;
     return false;
   }
-  return true;
+  if (fullName.value.match(checkName)) {
+    nameData.innerHTML =
+      '<i class="fas fa-exclamation-circle"> <span>Name only include letters</span>';
+    nameData.style.opacity = 0;
+    return true;
+  }
 }
 
-
-// Email Validation
-
-function emailBlur() {
-  let email = document.querySelector("#signUp-email");
+// email validation on blur
+function checkemail1() {
+  let emailData = document.querySelector("#email-data"); //error span for email
   if (email.value.length == "") {
-    let emailData = document.querySelector("#email-data");
-    emailData.innerHTML = "! please input this field";
+    emailData.innerHTML =
+      '<i class="fas fa-exclamation-circle"> <span>Please input this field</span>';
+    emailData.style.opacity = 1;
     return false;
   }
-  return true;
-}
-
-
-function emailFocus() {
-  let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  let email = document.querySelector("#signUp-email");
   if (!email.value.match(mailformat)) {
-    let emailData = document.querySelector("#email-data");
-    emailData.innerHTML = "!@ is missing.@ must include ";
+    emailData.innerHTML =
+      '<i class="fas fa-exclamation-circle"><span>Enter a valid Email Address</span>';
+    emailData.style.opacity = 1;
+    return false;
+  } else {
+    return true;
+  }
+}
+// email validation on key up
+function checkemail2() {
+  let emailData = document.querySelector("#email-data"); //error span for email
+  if (email.value.length == "") {
+    emailData.innerHTML =
+      '<i class="fas fa-exclamation-circle"> <span>Please input this field</span>';
+    emailData.style.opacity = 1;
     return false;
   }
-  return true;
-}
-
-
-function emailKeyup() {
-  let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  let email = document.querySelector("#signUp-email");
-  if (email.value.length != "" && email.value.search(mailformat)) {
-    let emailData = document.querySelector("#email-data");
-    emailData.innerHTML = "";
-    return false;
+  if (email.value.match(mailformat)) {
+    emailData.style.opacity = 0;
+    return true;
+  } else {
+    emailData.style.opacity = 0;
+    return true;
   }
-  return true;
 }
 
-
-//Password Validation
-
-function passwordBlur() {
-  let password = document.querySelector("#signUp-password");
+// password validation on blur
+function checkpassword1() {
+  let passwordFormat = /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{8,}$/; //regex for valid password
+  let passwordData = document.querySelector("#paswd-data"); //password error span
   if (password.value.length == "") {
-    let passwordData = document.querySelector("#paswd-data");
-    passwordData.innerText = "! please input this field";
+    passwordData.innerHTML =
+      '<i class="fas fa-exclamation-circle"> <span>Please input this field</span>';
+    passwordData.style.opacity = 1;
     return false;
   }
-  return true;
-}
-
-
-function passwordFocus() {
-  let password = document.querySelector("#signUp-password");
-  if (password.value.length < 8) {
-    let passwordData = document.querySelector("#paswd-data");
-    passwordData.innerText = "! pswd atleast 8 Characters long";
+  if (!password.value.match(passwordFormat)) {
+    passwordData.innerHTML =
+      '<i class="fas fa-exclamation-circle"><span>Must contain atleast 8 characters,one letter and one number</span>';
+    passwordData.style.opacity = 1;
     return false;
+  } else {
+    passwordData.style.opacity = 0;
+    return true;
   }
-  return true;
-
 }
-
-
-function passwordKeyup() {
-  let password = document.querySelector("#signUp-password");
-  if (password.value.length !== "" && password.value.length > 8) {
-    let passwordData = document.querySelector("#paswd-data");
-    passwordData.innerText = "";
-    return false;
+// password validation on key up
+function checkpassword2() {
+  let passwordFormat = /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{8,}$/; //regex for valid password
+  let passwordData = document.querySelector("#paswd-data"); //password error span
+  if (password.value.length !== "") {
+    passwordData.style.opacity = 0;
+    return true;
   }
-  return true;
+  if (password.value.match(passwordFormat)) {
+    passwordData.style.opacity = 0;
+    return true;
+  }
 }
-
 
 // Validation for Confirm Password
 
-function confirmPasswordBlur() {
-  let confirmPassword = document.querySelector("#confirm-password");
-  if (confirmPassword.value.length == "") {
-    let confirmPasswordData = document.querySelector("#confirmPaswd-data");
-    confirmPasswordData.innerText = "!please input this field";
+// confirm  password validation on blur
+function checkconfirmpassword1() {
+  let confirmPassword = document.querySelector("#confirm-password"); // input for confirm password
+  let confirmPasswordData = document.querySelector("#confirmPaswd-data"); // confirm password error span
+  if (confirmPassword.value != password.value && confirmPassword.value !== "") {
+    confirmPasswordData.innerHTML =
+      '<i class="fas fa-exclamation-circle"><span>Password not match</span>';
+    confirmPasswordData.style.opacity = 1;
+    return false;
+  }
+  if (confirmPassword.value == "") {
+    confirmPasswordData.innerHTML =
+      '<i class="fas fa-exclamation-circle"><span>Please input this field</span>';
+    confirmPasswordData.style.opacity = 1;
     return false;
   }
   return true;
 }
-
-
-function confirmPasswordFocus() {
-  let password = document.querySelector("#signUp-password");
-  let confirmPassword = document.querySelector("#confirm-password");
-  if (confirmPassword.value != password.value) {
-    let confirmPasswordData = document.querySelector("#confirmPaswd-data");
-    confirmPasswordData.innerText = "!pasword not match";
-    return false;
+// confirm password  validation on key
+function checkconfirmpassword2() {
+  let confirmPassword = document.querySelector("#confirm-password"); // input for confirm password
+  let confirmPasswordData = document.querySelector("#confirmPaswd-data"); // confirm password error span
+  if (
+    confirmPassword.value.length != "" &&
+    confirmPassword.value == password.value
+  ) {
+    confirmPasswordData.style.opacity = 0;
+    return true;
+  } else {
+    confirmPasswordData.style.opacity = 0;
   }
-  return true;
-}
-
-
-function confirmPasswordKeyup() {
-  let password = document.querySelector("#signUp-password");
-  let confirmPassword = document.querySelector("#confirm-password");
-  if (confirmPassword.value.length != "" && confirmPassword.value == password.value) {
-    let confirmPasswordData = document.querySelector("#confirmPaswd-data");
-    confirmPasswordData.innerText = "";
-    return false;
-  }
-  return true;
 }
 
 // clear signup
-
 function clearData() {
   console.log(document.querySelector("#full-name"));
   document.querySelector("#full-name").value = "";
   document.getElementById("signUp-email").value = "";
   document.getElementById("signUp-password").value = "";
   document.getElementById("confirm-password").value = "";
-
 }
 
-//  signup submit
 function signUpButton() {
-  let input = document.querySelector(".signup-input");
   let fullName = document.querySelector("#full-name").value;
   let email = document.querySelector("#signUp-email").value;
   let password = document.querySelector("#signUp-password").value;
-  let confirmPassword = document.querySelector("#confirm-password").value;
+  // let users = []; //all users array
 
-  if (fullnameBlur() && emailBlur() && passwordBlur() && confirmPasswordBlur()) {
-    let signUpdata =
-    {
+  if (
+    checkfullname1() &&
+    checkfullname2() &&
+    checkemail1() &&
+    checkemail2() &&
+    checkpassword1() &&
+    checkpassword2() &&
+    checkconfirmpassword1() &&
+    checkconfirmpassword2()
+  ) {
+    // signup user data
+    let user = {
       name: fullName,
       email: email,
-      password: password
-
+      password: password,
     };
-    let signUpKey = Date.now();
-   
-    localStorage.setItem(signUpKey, JSON.stringify(signUpdata));
-  
-    window.location.assign(login());
+
+    /*
+     * if users array is not setted then
+     * add the previous users in users array,
+     * after that add the new one
+     */
+    // if (localStorage.getItem("users") !== null) {
+    //   // array of users from localStorage
+    //   let previousUsers = JSON.parse(localStorage.getItem("users"));
+
+    //   previousUsers.forEach(preUser => {
+    //     /* if email already exist then
+    //     replace the data with new one */
+    //     if (preUser.email !== user.email) {
+    //       users.push(preUser);
+    //     }
+    //   });
+    // }
+
+    // users.push(user); // add the current user
+
+    // //set updated users into local storage
+    // localStorage.setItem("users", JSON.stringify(users));
+
 
     clearData();
-  }
-  else {
-    console.log("error")
+    window.location.assign("../html/form.html");
+    return true
+  } else {
+    return false;
   }
 }
 
-
-
-// login validation
-
-
+// login form validation
 // Email Validation
-function loginEmailfocus() {
-  let loginEmail = document.querySelector("#login-email");
+
+function loginEmailValidation1() {
+  let loginEmaildata = document.querySelector("#loginemail-data"); // error span for email
   if (loginEmail.value.length == "") {
-    let loginEmaildata = document.querySelector("#loginemail-data");
-    loginEmaildata.innerHTML = "! please input this field";
+    loginEmaildata.innerHTML =
+      '<i class="fas fa-exclamation-circle"><span> Please input this field</span>';
+    loginEmaildata.style.opacity = 1;
     return false;
   }
-  return true;
-}
-
-
-function loginEmailkeyup() {
-  let loginEmail = document.querySelector("#login-email");
-  if (loginEmail.value != "") {
-    let loginEmaildata = document.querySelector("#loginemail-data");
-    loginEmaildata.innerHTML = "";
+  if (!loginEmail.value.match(mailformat)) {
+    loginEmaildata.innerHTML =
+      '<i class="fas fa-exclamation-circle"> <span>Enter a valid Email Address</span>';
+    loginEmaildata.style.opacity = 1;
     return false;
+  } else {
+    loginEmaildata.style.opacity = 0;
+    return true;
   }
-  return true;
 }
-
+function loginEmailValidation2() {
+  let loginEmaildata = document.querySelector("#loginemail-data"); // error span for email
+  if (loginEmail.value.length !== "") {
+    loginEmaildata.style.opacity = 0;
+    return true;
+  }
+  if (loginEmail.value.match(mailformat)) {
+    loginEmaildata.style.opacity = 0;
+    return true;
+  }
+}
 
 //passwd validation
 
-function loginPasswordfocus() {
-  let loginPassword = document.querySelector("#login-paswd");
+// on blur
+function loginPasswordValidation1() {
+  let loginPasswordData = document.querySelector("#loginpaswd-data"); //error span for password
   if (loginPassword.value.length == "") {
-    let loginPasswordData = document.querySelector("#loginpaswd-data");
-    loginPasswordData.innerHTML = "! please input this field";
+    loginPasswordData.innerHTML =
+      '<i class="fas fa-exclamation-circle"><span>Please input this field</span>';
+    loginPasswordData.style.opacity = 1;
     return false;
+  } else {
+    loginPasswordData.style.opacity = 0;
+    return true;
   }
-  return true;
 }
-
-
-function loginPasswordkeyup() {
-  let loginPassword = document.querySelector("#login-paswd");
+// on keyUp
+function loginPasswordValidation2() {
+  let loginPasswordData = document.querySelector("#loginpaswd-data"); //error span for password
   if (loginPassword.value != "") {
-    let loginPasswordData = document.querySelector("#loginpaswd-data");
-    loginPasswordData.innerHTML = "";
-    return false;
+    loginPasswordData.style.opacity = 0;
+    return true;
   }
-  return true;
 }
-
+// clear input fields in login
 function clearLogin() {
   document.querySelector("#login-email").value = "";
   document.querySelector("#login-paswd").value = "";
-
 }
 
 function loginButton() {
@@ -275,47 +324,47 @@ function loginButton() {
   let loginEmail = document.querySelector("#login-email");
   let loginPassword = document.querySelector("#login-paswd");
   let flag = false;
-  let users = [];
+  let loggedInUser = {
+    user_id: Date.now(),
+    email: loginEmail.value,
+  };
 
-  for (let i = 0; i < localStorage.length; i++) {
+  /*
+   * get the users array from local storage
+   * and parse the string into JSON.
+   */
+  let users = JSON.parse(localStorage.getItem("users"));
 
-    //get usersfrom local storage
-    let user = localStorage.getItem(localStorage.key(i));
-
-    //parse the string into JSON
-    user = JSON.parse(user);
-
-    //check it's user data, not product
-    if (user.email !== undefined) {
-      users.push(user); // add the signed up user into users array
-    }
-
-
-  }
   for (let i = 0; i < users.length; i++) {
     if (loginEmail.value == users[i].email) {
       if (loginPassword.value == users[i].password) {
         flag = true;
         break;
-      }
-      else {
+      } else {
         let loginPasswordData = document.querySelector("#loginpaswd-data");
-        loginPasswordData.innerHTML = "!incorrect pswd";
+        loginPasswordData.innerHTML =
+          '<i class="fas fa-exclamation-circle">incorrect Password';
+        loginPasswordData.style.opacity = 1;
         break;
       }
-    }
-    else {
+    } else {
       let loginEmaildata = document.querySelector("#loginemail-data");
-      loginEmaildata.innerHTML = "! Incorrect Email";
+      loginEmaildata.innerHTML =
+        '<i class="fas fa-exclamation-circle">Incorrect Email';
+      loginEmaildata.style.opacity = 1;
     }
   }
-  if (flag && loginEmailfocus() && loginPasswordfocus()) {
+  if (
+    flag &&
+    loginEmailValidation1() &&
+    loginEmailValidation2() &&
+    loginPasswordValidation1() &&
+    loginPasswordValidation2()
+  ) {
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
     window.open("../index.html");
     clearLogin();
+  } else {
+    console.log("field is wrong ");
   }
-  else {
-    console.log("field is wrong ")
-  }
-
 }
-
