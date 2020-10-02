@@ -358,8 +358,8 @@
             "description": "Car Audio Amplifier - Direct Fit, Sold individually",
             "price": 4000,
             "stock_amount": 20,
-            "url1": "../assets/images/json-url/3/car-audio-amplifier-1.webp",
-            "url2": "../assets/images/json-url/3/car-audio-amplifier-2.webp"
+            "url1": "../assets/images/json-url/3/car-audio-amplifier-1.jpg",
+            "url2": "../assets/images/json-url/3/car-audio-amplifier-2.jpg"
           },
           {
             "p_id": 2,
@@ -367,8 +367,8 @@
             "description": "Water in Fuel Sensor Heating Element Without Water Level Sensor in Fuel Filter.",
             "price": 2000,
             "stock_amount": 40,
-            "url1": "../assets/images/json-url/3/heater-1.webp",
-            "url2": "../assets/images/json-url/3/heater-2.webp"
+            "url1": "../assets/images/json-url/3/heater-1.jpg",
+            "url2": "../assets/images/json-url/3/heater-2.jpg"
           },
           {
             "p_id": 3,
@@ -376,8 +376,8 @@
             "description": "Keyless Remote Case to open and lock your car without using manual car keys ",
             "price": 1800,
             "stock_amount": 80,
-            "url1": "../assets/images/json-url/3/keyless-car-case-1.webp",
-            "url2": "../assets/images/json-url/3/keyless-car-case-2.webp"
+            "url1": "../assets/images/json-url/3/keyless-car-case-1.jpg",
+            "url2": "../assets/images/json-url/3/keyless-car-case-2.jpg"
           }
         ]
       },
@@ -394,8 +394,8 @@
             "description": "Horn Compressor Installation Kit",
             "price": 1900,
             "stock_amount": 50,
-            "url1": "../assets/images/json-url/3/horns-kit-1.webp",
-            "url2": "../assets/images/json-url/3/horns-kit-1.webp"
+            "url1": "../assets/images/json-url/3/horns-kit-1.jpg",
+            "url2": "../assets/images/json-url/3/horns-kit-1.jpg"
           },
           {
             "p_id": 5,
@@ -403,8 +403,8 @@
             "description": "Interior Restoration Kit",
             "price": 2600,
             "stock_amount": 10,
-            "url1": "../assets/images/json-url/3/coverlay-1.webp",
-            "url2": "../assets/images/json-url/3/coverlay-2.webp"
+            "url1": "../assets/images/json-url/3/coverlay-1.jpg",
+            "url2": "../assets/images/json-url/3/coverlay-2.jpg"
           }
         ]
       },
@@ -421,8 +421,8 @@
             "description": "Mirror Switch - Direct Fit, Sold individually",
             "price": 3700,
             "stock_amount": 35,
-            "url1": "../assets/images/json-url/3/mirror-switch-1.webp",
-            "url2": "../assets/images/json-url/3/mirror-switch-2.webp"
+            "url1": "../assets/images/json-url/3/mirror-switch-1.jpg",
+            "url2": "../assets/images/json-url/3/mirror-switch-2.jpg"
           },
           {
             "p_id": 8,
@@ -430,8 +430,8 @@
             "description": "Door Lock Switch - Direct Fit, Sold individually",
             "price": 2000,
             "stock_amount": 10,
-            "url1": "../assets/images/json-url/3/door-switch-1.webp",
-            "url2": "../assets/images/json-url/3/door-switch-2.webp"
+            "url1": "../assets/images/json-url/3/door-switch-1.jpg",
+            "url2": "../assets/images/json-url/3/door-switch-2.jpg"
           },
           {
             "p_id": 9,
@@ -439,8 +439,8 @@
             "description": "Relay - Multi-purpose relay, Direct Fit, Sold individually",
             "price": 2200,
             "stock_amount": 12,
-            "url1": "../assets/images/json-url/3/relay-1.webp",
-            "url2": "../assets/images/json-url/3/relay-1.webp"
+            "url1": "../assets/images/json-url/3/relay-1.jpg",
+            "url2": "../assets/images/json-url/3/relay-1.jpg"
           }
         ]
       }
