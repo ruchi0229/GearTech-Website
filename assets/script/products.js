@@ -12,14 +12,15 @@ let getUrlParams = function (url) {
     return params;
 };
 
-// function showLoader()
-// {
-//     $(".loader").fadeIn("slow");
-// }
-// function hideLoader()
-// {
-//     $(".loader").fadeOut("slow");
-// }
+function showLoader()
+{
+    $(".loader").fadeIn("slow");
+    $("#myElement").css("display", "none");
+}
+function hideLoader()
+{
+    $(".loader").fadeOut("slow");
+}
 
 // asynchronous function to get fetch products from JSON
 async function getProducts() {
