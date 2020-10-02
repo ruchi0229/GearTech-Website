@@ -336,13 +336,6 @@ footer a:hover {
   cursor: pointer;
 }
 
-
-
-#address-input{
-  border-radius: 2%;
-  height: 120px !important;
-}
-
 .title {
   font-weight: bold;
   color: var(--blue-color);

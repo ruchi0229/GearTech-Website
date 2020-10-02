@@ -255,7 +255,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="row py-5 p-4 bg-white rounded shadow-sm order-details">
 
                         <div class="col-lg-6">
@@ -292,25 +292,42 @@
                                     order
                                 </p>
                                 <div class="contact-wrap">
-                                    <form action="" class="contact-form">
-                                        <div class="col-sm-12">
-                                            <div class="input-block">
-                                                <label for="name"><strong class="text-muted">Full Name</strong></label>
-                                                <input class="form-control rounded-pill personal-info-input" type="text" required>
+                                    <form class="needs-validation" novalidate>
+                                        <div class="form-group">
+                                            <label for="name"><strong class="text-muted">Full Name</strong></label>
+                                            <input type="text" class="form-control rounded-pill personal-info-input"
+                                                id="name-input" placeholder="Please enter your full name" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please add your name.
                                             </div>
                                         </div>
-                                        <div class="col-sm-12">
-                                            <div class="input-block">
-                                                <label class="mt-1" for="phone"><strong class="text-muted">Contact
-                                                        No</strong></label>
-                                                <input class="form-control rounded-pill personal-info-input" type="tel" required>
+
+                                        <div class="form-group">
+                                            <label for="contact"><strong class="text-muted">Contact No</strong></label>
+                                            <input type="tel" class="form-control rounded-pill personal-info-input"
+                                                id="contact-input" placeholder="Please enter your phone no" required
+                                                minlength="7" maxlength="12">
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please choose a valid phone number (11 characters).
                                             </div>
                                         </div>
-                                        <div class="col-sm-12">
-                                            <div class="input-block d-flex flex-column">
-                                                <label class="mt-1" for="address"><strong class="text-muted">Complete
-                                                        Address</strong></label>
-                                                <textarea class="form-control personal-info-input" id="address-input" required></textarea>
+
+                                        <div class="form-group">
+                                            <label for="address"><strong class="text-muted">Address</strong></label>
+                                            <input type="text" class="form-control rounded-pill personal-info-input"
+                                                id="address-input" placeholder="Please enter your delivery address"
+                                                required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please add your full address.
                                             </div>
                                         </div>
                                     </form>
@@ -319,7 +336,7 @@
 
                         </div>
                     </div>
-               
+
 
                 </div>
             </div>
